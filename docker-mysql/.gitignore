@@ -1,0 +1,23 @@
+# MySQL dumps / local database data
+docker/mysql/dumps/*
+!docker/mysql/dumps/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+.fleet/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+
