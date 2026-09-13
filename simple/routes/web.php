@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NavController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,6 +14,4 @@ Route::get('/abc', function () {
 
 
 
-Route::get('/def', function () {
-    return view('def');
-});
+Route::get('/def', [NavController::class, 'index']);

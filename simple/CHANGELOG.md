@@ -9,3 +9,11 @@ npm install --save-dev laravel-vite-plugin
 in reality i was missing:
   @vite(['resources/css/app.css', 'resources/js/app.js']) 
   on the .blade.php file
+
+
+added layout.blade.php
+https://youtu.be/MOLZOXqaomM?si=H8YPeSLyPGTn91JP
+
+
+min 20:
+php artisan make:controller NavController
