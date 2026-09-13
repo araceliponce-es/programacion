@@ -10,3 +10,9 @@ Route::get('/', function () {
 Route::get('/abc', function () {
     return view('abc');
 });
+
+
+
+Route::get('/def', function () {
+    return view('def');
+});
