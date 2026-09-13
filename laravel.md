@@ -45,7 +45,8 @@ How to Skip Laravel BoostIf you do not want Laravel Boost included when creating
 
 laravel new my-app --no-boost
 
-│ You can start your local development using:                  │
- │                                                              │
- │ 1. cd example                                                │
- │ 2. composer run dev     
+You can start your local development using:                  
+1. cd example                                                
+2. composer run dev     
+
+Changed to blade option, the startter kit uses mostly react.....
