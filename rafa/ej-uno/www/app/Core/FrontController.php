@@ -37,6 +37,14 @@ class FrontController
             'get'
         );
         Route::add(
+            '/ej-2',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosOperadoresController();
+                $controlador->ejercicio1();
+            },
+            'get'
+        );
+        Route::add(
             '/blanco',
             function () {
                 echo '';
