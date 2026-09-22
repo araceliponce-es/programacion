@@ -21,8 +21,8 @@
 
            <!-- intento de menu 0 -->
 
-
-          <li class="nav-item <?php echo (in_array($_SERVER['REQUEST_URI'], [$_ENV['host.folder'] . ''])) ? 'menu-open' : '';?>">
+<!-- si el current url contiene /ej -> .menu-open -->
+          <li class="nav-item <?php echo (str_contains($_SERVER['REQUEST_URI'], $_ENV['host.folder'] . 'ej')) ? 'menu-open' : '';?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
