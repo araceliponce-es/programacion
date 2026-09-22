@@ -19,7 +19,9 @@
           </li> 
 
 
-           <!-- intento de menu 0 -->
+           <!-- intento de menu 0 
+            https://fontawesome.com/search?ic=free-collection
+            -->
 
 <!-- si el current url contiene /ej -> .menu-open -->
           <li class="nav-item <?php echo (str_contains($_SERVER['REQUEST_URI'], $_ENV['host.folder'] . 'ej')) ? 'menu-open' : '';?>">
@@ -31,18 +33,37 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              
+
+
+              <?php for ($i = 1; $i <= 10; $i++): ?>
+                  <li class="nav-item">
+                      <a href="<?= $_ENV['host.folder'] . 'ej-' . $i ?>"
+                        class="nav-link <?= $_SERVER['REQUEST_URI'] === $_ENV['host.folder'] . 'ej-' . $i ? 'active' : '' ?>">
+                          <i class="fas fa-carrot nav-icon"></i>
+                          <p>ej <?= $i ?></p>
+                      </a>
+                  </li>
+              <?php endfor; ?>
+
+             <!--  <li class="nav-item">
                 <a href="<?php echo $_ENV['host.folder'] ?>ej-1" class="nav-link <?php echo $_SERVER['REQUEST_URI'] === $_ENV['host.folder'] . 'ej-1' ? 'active' : ''; ?>">
-                  <i class="fas fa-laptop-code nav-icon"></i>
+                  <i class="fas fa-carrot nav-icon"></i>
                   <p>ej 1</p>
                 </a>
               </li>   
               <li class="nav-item">
                 <a href="<?php echo $_ENV['host.folder'] ?>ej-2" class="nav-link <?php echo $_SERVER['REQUEST_URI'] === $_ENV['host.folder'] . 'ej-2' ? 'active' : ''; ?>">
-                  <i class="fas fa-laptop-code nav-icon"></i>
+                  <i class="fas fa-leaf nav-icon"></i>
                   <p>ej 2</p>
                 </a>
-              </li>              
+              </li>   
+              <li class="nav-item">
+                <a href="<?php echo $_ENV['host.folder'] ?>ej-3" class="nav-link <?php echo $_SERVER['REQUEST_URI'] === $_ENV['host.folder'] . 'ej-3' ? 'active' : ''; ?>">
+                  <i class="fas fa-lemon nav-icon"></i>
+                  <p>ej 3</p>
+                </a>
+              </li>      -->         
             </ul>
           </li>
 

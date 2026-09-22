@@ -44,6 +44,14 @@ class FrontController
             },
             'get'
         );
+         Route::add(
+            '/ej-3',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosEstructurasController();
+                $controlador->ejercicio1();
+            },
+            'get'
+        );
         Route::add(
             '/blanco',
             function () {
