@@ -41,7 +41,7 @@ $data['es_divisible'] = $data['uno'] % $data['dos'] ==0;
 
 
 
-/* soy bisiesto o no */
+/* soy bisiesto o no,no funciona aun*/
 
 $year = 2028;
 $is_leap_year = $year%400===0&&$year%4===0&&$year%100!==0;
