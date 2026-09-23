@@ -9,3 +9,9 @@ holiiiis
 <p class="uno">
   es divisible ?  <?= $uno; ?> entre <?= $dos; ?>: <?= $es_divisible? 'sí':'no'; ?>
 </p>
+
+<?php require __DIR__ . '/partial/form-calcula-notas.php'; ?>
+
+
+
+<div class="alert alert-info d-none"></div>
