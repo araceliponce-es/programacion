@@ -15,3 +15,8 @@ holiiiis
 
 
 <div class="alert alert-info d-none"></div>
+
+
+<div class="soy-bisiesto">
+  <?= $is_leap_year? 'si soy': 'no soy';?>
+</div>
