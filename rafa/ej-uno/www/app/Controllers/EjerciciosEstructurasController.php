@@ -41,10 +41,17 @@ $data['es_divisible'] = $data['uno'] % $data['dos'] ==0;
 
 
 
-/* soy bisiesto o no,no funciona aun*/
+/* soy bisiesto o no,no funciona aun
 
-$year = 2028;
-$is_leap_year = $year%400===0&&$year%4===0&&$year%100!==0;
+Es bisiesto si es divisible entre 4, excepto cuando es divisible entre 100, salvo que también sea divisible entre 400.
+
+ó:
+es divisible entre 100, entonces debe ser sivisible entre 400, de lo contario solo necesita ser divisible entre 4
+
+*/
+
+$year = 2029;
+$is_leap_year = $year%100===0?$year%400===0:$year%4===0;
 $data['is_leap_year'] = $is_leap_year;
        
 
