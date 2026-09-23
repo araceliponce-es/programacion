@@ -17,6 +17,19 @@ holiiiis
 <div class="alert alert-info d-none"></div>
 
 
-<div class="soy-bisiesto">
+<div class="soy-bisiesto font-weight-bold">
   <?= $is_leap_year? 'si soy': 'no soy';?>
+</div>
+
+
+
+<div class="mayor">
+  el numero mayor es <?= $mayor;?>
+  <?php foreach ($numeros_aqui as $numero): ?>
+
+    <p class="<?= $numero==$mayor? 'font-weight-bold':'' ?>">
+      <?= $numero ?>
+    </p>
+  
+  <?php endforeach; ?>
 </div>

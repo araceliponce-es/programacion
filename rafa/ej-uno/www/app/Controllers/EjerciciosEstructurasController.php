@@ -31,9 +31,13 @@ $data['un_digito'] = $data['algo'][1];
 $data['uno'] = 54007;
 $data['dos'] = 547;
 $data['es_divisible'] = $data['uno'] % $data['dos'] ==0;
+
+
 /* Script que reciba tres números y los muestre en pantalla marcando en negrita al mayor.
  */
 
+$data['numeros_aqui'] = [2,5,3];
+$data['mayor'] = max($data['numeros_aqui']);
 
 /* Script que reciba un número entero de segundos y muestre a cuantos días, horas, minutos y segundos equivale.
  */

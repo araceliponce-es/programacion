@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!-- BBDD 6 ENTIDADES, LOGIN,REGISTRO -->
 </head>
+
 <body>
   <h1>Hola Mundo</h1>
-    
-    <script>
-        console.log("Este mensaje se ejecuta desde el código interno.");
 
-/* https://pokeapi.co/api/v2/berry/{id or name}/
- */        fetch('https://pokeapi.co/api/v2/berry/1/')
-  .then(response => response.json())
-  .then(data => console.log(data));
-    </script>
+  <script>
+    console.log("Este mensaje se ejecuta desde el código interno.");
+
+    /* https://pokeapi.co/api/v2/berry/{id or name}/
+    
+    
+    https://pokeapi.co/api/v2/pokemon/{id or name}/
+
+    el 1er pokemon es bulbasour
+    
+     */
+
+    fetch('https://pokeapi.co/api/v2/pokemon/1/')
+      .then(response => response.json())
+      .then(data => console.log(data));
+
+
+    // necesita 8 random ids (juego de 4x4 son 16, 8 pares)
+    // les asignas posiciones
+    // a cada uno se le renderiza una carta.
+    // no solo css para voltear cada carta
+  </script>
 </body>
+
 </html>
