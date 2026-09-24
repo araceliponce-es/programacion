@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 7 - Tablas</title>
+
+
+  <!-- 
+  rowspan="2" celda ocupa dos filas.
+colspan="2" o colspan="3" celda ocupa 2 o 3 columnas.
+ -->
+</head>
+
+<body>
+
+  <header>
+    <h1>Bloque 7: Etiquetas para Tablas de Datos</h1>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Tabla de calificaciones</h2>
+
+      <table>
+        <caption>Calificaciones de los módulos de un alumno</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Módulo</th>
+            <th scope="col">Primera evaluación</th>
+            <th scope="col">Segunda evaluación</th>
+            <th scope="col">Nota final</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Programación</th>
+            <td>7</td>
+            <td>8</td>
+            <td>8</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Bases de Datos</th>
+            <td>6</td>
+            <td>8</td>
+            <td>7</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Lenguajes de Marcas</th>
+            <td>9</td>
+            <td>9</td>
+            <td>9</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Sistemas Informáticos</th>
+            <td>7</td>
+            <td>7</td>
+            <td>7</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <th scope="row">Media</th>
+            <td>7,25</td>
+            <td>8</td>
+            <td>7,75</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </section>
+
+    <section>
+      <h2>Tabla con celdas combinadas</h2>
+
+      <table>
+        <caption>Horario semanal de Desarrollo Web</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Día</th>
+            <th scope="col">09:00 - 10:00</th>
+            <th scope="col">10:00 - 11:00</th>
+            <th scope="col">11:00 - 12:00</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Lunes</th>
+            <td rowspan="2">Programación</td>
+            <td>HTML</td>
+            <td>CSS</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Martes</th>
+            <td colspan="2">Proyecto Web</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Miércoles</th>
+            <td>JavaScript</td>
+            <td>JavaScript</td>
+            <td>Bases de Datos</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Jueves</th>
+            <td colspan="3">Trabajo práctico</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </section>
+
+  </main>
+
+</body>
+
+</html>

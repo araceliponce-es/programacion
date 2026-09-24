@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 6 - Imágenes y Multimedia</title>
+
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    picture:after {
+      display: block;
+    }
+
+
+    /* Imagen por defecto: pantallas medianas */
+    picture img {
+      filter: sepia(0.4);
+      transition: filter 0.3s ease;
+    }
+
+    /* Pantallas pequeñas: hasta 600px */
+    @media (max-width: 600px) {
+      picture img {
+        filter: grayscale(100%);
+      }
+
+      picture:after {
+        content: 'ancho pantalla <=600px'
+      }
+    }
+
+    /* Pantallas medianas: 601px - 1200px */
+    @media (min-width: 601px) and (max-width: 1200px) {
+      picture img {
+        filter: sepia(0.5) saturate(1.5);
+      }
+
+      picture:after {
+        content: 'ancho pantalla >600px y <=1200px'
+      }
+    }
+
+    /* Pantallas grandes: desde 1201px */
+    @media (min-width: 1201px) {
+      picture img {
+        filter: hue-rotate(90deg) saturate(1.5);
+      }
+
+      picture:after {
+        content: 'ancho pantalla >1200px'
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <section>
+      <h2>Imagen básica</h2>
+
+      <img src="./imagen.jpg" alt="Ordenador portátil mostrando código HTML y JavaScript como ejemplo de desarrollo de aplicaciones web" width="800" height="450">
+    </section>
+
+    <section>
+      <h2>Imagen con figura y leyenda</h2>
+
+      <figure>
+        <img src="./imagen.jpg" alt="Pantalla de un ordenador utilizada para desarrollar una aplicación web" width="800" height="450">
+
+        <figcaption>
+          Ejemplo de un entorno de trabajo utilizado durante el desarrollo de aplicaciones web.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Imagen responsive</h2>
+
+      <picture>
+
+        <source media="(max-width: 600px)" srcset="./imagen-xs.png">
+
+        <source media="(min-width: 601px) and (max-width: 1200px)" srcset="./imagen.jpg">
+
+        <source media="(min-width: 1201px)" srcset="./imagen-xl.png">
+
+        <img src="./imagen.jpg" alt="Entorno de desarrollo utilizado para crear aplicaciones web" width="800" height="450">
+
+      </picture>
+    </section>
+
+    <section>
+      <h2>Imagen decorativa con atributo alt vacio</h2>
+
+      <img src="./imagen.jpg" alt="" width="200" height="100">
+    </section>
+
+  </main>
+
+</body>
+
+</html>
