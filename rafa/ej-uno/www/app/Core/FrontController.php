@@ -52,6 +52,23 @@ class FrontController
             },
             'get'
         );
+        //usar get yyy post
+         Route::add(
+            '/ej-4',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosController();
+                $controlador->ejercicio1();
+            },
+            'get'
+        );
+          Route::add(
+            '/ej-4',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosController();
+                $controlador->ejercicio1();
+            },
+            'post'
+        );
         Route::add(
             '/blanco',
             function () {

@@ -33,3 +33,12 @@ holiiiis
   
   <?php endforeach; ?>
 </div>
+
+
+
+
+<div class="el-sueldo">
+  <p>
+    <?= $un_descuento ?>
+  </p>
+</div>
