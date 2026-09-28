@@ -52,7 +52,7 @@ class FrontController
             },
             'get'
         );
-        //usar get yyy post
+        //ej-4: get usa el ejercicio1() y post usa doEjercicio1()
          Route::add(
             '/ej-4',
             function () {
@@ -65,10 +65,46 @@ class FrontController
             '/ej-4',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosController();
-                $controlador->ejercicio1();
+                $controlador->doEjercicio1();
             },
             'post'
         );
+//no pueden llevar -- en el nombre (los controllers)
+         Route::add(
+            '/ej-5',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosSortedController();
+                $controlador->ejercicio();
+            },
+            'get'
+        );
+          Route::add(
+            '/ej-5',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosSortedController();
+                $controlador->doEjercicio();
+            },
+            'post'
+        );
+
+        //no pueden llevar -- en el nombre (los controllers)
+         Route::add(
+            '/ej-6',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosLetrasController();
+                $controlador->ejercicio();
+            },
+            'get'
+        );
+          Route::add(
+            '/ej-6',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosLetrasController();
+                $controlador->doEjercicio();
+            },
+            'post'
+        );
+
         Route::add(
             '/blanco',
             function () {
