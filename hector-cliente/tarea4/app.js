@@ -4,6 +4,7 @@ function calcularCosteTotal() {
   let costeLicencia = 15;
 
   // ERROR LÓGICO INTENCIONADO: Se realiza una suma en lugar de una multiplicación
+  debugger; //esto es para parar el debugger en el navegador, quitar del script ???????
   let subtotal = numeroEquipos * costeLicencia;
 
   let iva = subtotal * 0.21;

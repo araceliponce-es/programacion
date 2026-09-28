@@ -15,17 +15,14 @@ colspan="2" o colspan="3" celda ocupa 2 o 3 columnas.
 
 <body>
 
-  <header>
-    <h1>Bloque 7: Etiquetas para Tablas de Datos</h1>
-  </header>
 
   <main>
 
     <section>
-      <h2>Tabla de calificaciones</h2>
+      <h2>Tabla 1, con caption, thead,tbody y tfoot</h2>
 
       <table>
-        <caption>Calificaciones de los módulos de un alumno</caption>
+        <caption>Calificaciones </caption>
 
         <thead>
           <tr>
@@ -41,37 +38,37 @@ colspan="2" o colspan="3" celda ocupa 2 o 3 columnas.
             <th scope="row">Programación</th>
             <td>7</td>
             <td>8</td>
-            <td>8</td>
+            <td>9</td>
           </tr>
 
           <tr>
-            <th scope="row">Bases de Datos</th>
-            <td>6</td>
-            <td>8</td>
+            <th scope="row">BBDD</th>
             <td>7</td>
+            <td>8</td>
+            <td>9</td>
           </tr>
 
           <tr>
             <th scope="row">Lenguajes de Marcas</th>
-            <td>9</td>
-            <td>9</td>
+            <td>7</td>
+            <td>8</td>
             <td>9</td>
           </tr>
 
           <tr>
             <th scope="row">Sistemas Informáticos</th>
             <td>7</td>
-            <td>7</td>
-            <td>7</td>
+            <td>8</td>
+            <td>9</td>
           </tr>
         </tbody>
 
         <tfoot>
           <tr>
             <th scope="row">Media</th>
-            <td>7,25</td>
-            <td>8</td>
-            <td>7,75</td>
+            <td>9</td>
+            <td>9</td>
+            <td>9</td>
           </tr>
         </tfoot>
 
@@ -79,6 +76,27 @@ colspan="2" o colspan="3" celda ocupa 2 o 3 columnas.
     </section>
 
     <section>
+
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        table,
+        td,
+        th {
+          border: 1px solid white;
+          border-collapse: collapse;
+        }
+
+        td,
+        th {
+          padding: .5rem;
+          background-color: plum;
+        }
+      </style>
       <h2>Tabla con celdas combinadas</h2>
 
       <table>
@@ -103,20 +121,17 @@ colspan="2" o colspan="3" celda ocupa 2 o 3 columnas.
 
           <tr>
             <th scope="row">Martes</th>
-            <td colspan="2">Proyecto Web</td>
+            <td colspan="2">TypeScript</td>
           </tr>
 
           <tr>
             <th scope="row">Miércoles</th>
             <td>JavaScript</td>
-            <td>JavaScript</td>
-            <td>Bases de Datos</td>
+            <td>React</td>
+            <td>BBDD</td>
           </tr>
 
-          <tr>
-            <th scope="row">Jueves</th>
-            <td colspan="3">Trabajo práctico</td>
-          </tr>
+
         </tbody>
 
       </table>
