@@ -26,25 +26,25 @@
       <fieldset>
         <legend>Datos personales</legend>
 
-        <p>
+        <div>
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required minlength="3" placeholder="Introduce tu nombre">
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="email">Correo electrónico:</label>
           <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="password">Contraseña:</label>
           <input type="password" id="password" name="password">
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="edad">Edad (no acepta menor A 1 O MAYOR A 100):</label>
           <input type="number" id="edad" name="edad" min="1" max="100">
-        </p>
+        </div>
 
       </fieldset>
 
@@ -52,7 +52,7 @@
       <fieldset>
         <legend>Preferencias</legend>
 
-        <p>
+        <div>
           <label for="experiencia">Experiencia:</label>
 
           <input type="range" id="experiencia" name="experiencia" min="1" max="5" list="niveles">
@@ -63,9 +63,9 @@
             <option value="4"></option>
             <option value="5" label="Avanzado"></option>
           </datalist>
-        </p>
+        </div>
 
-        <p>Modalidad:</p>
+        <div>Modalidad:</div>
 
         <input type="radio" id="presencial" name="modalidad" value="presencial">
         <label for="presencial">Presencial</label>
@@ -76,14 +76,14 @@
         <input type="radio" id="mixta" name="modalidad" value="mixta">
         <label for="mixta">Mixta</label>
 
-        <p>
+        <div>
           <input type="checkbox" id="notificaciones" name="notificaciones" value="si">
           <label for="notificaciones">
             Quiero notificaciones en mi e-mail.
           </label>
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="tecnologia">Tecnología favorita:</label>
 
           <select id="tecnologia" name="tecnologia">
@@ -101,21 +101,21 @@
             </optgroup>
 
           </select>
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="comentarios">Mensaje:</label>
           <br>
 
           <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe aquí tus comentarios..."></textarea>
-        </p>
+        </div>
 
       </fieldset>
 
-      <p>
+      <div>
         <button type="submit">Enviar</button>
         <button type="reset">Borrar todo</button>
-      </p>
+      </div>
 
     </form>
 
