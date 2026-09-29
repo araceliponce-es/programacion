@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./output.css">
+</head>
+
+<body>
+  <h1 class="text-4xl font-bold text-blue-500">
+    Hello Tailwind!
+  </h1>
+
+
+  <!-- https://www.fromscratch.works/?ref=lapaninja -->
+  <div class="esto" style="position:relative; height: 20rem;">
+    <div index="7" style="transform: translate3d(calc(-50% + 726.565px), -50%, 0px); z-index: 1; left: 50%; position: absolute; top: 50%; opacity: 1;" class="sc-dJkDXt bOxpoT">
+      <img src="./imagen.webp" alt="Graph Paper">
+      <!-- <canvas width="256.48437500188356" height="350" class="sc-lertIE cZNrku"></canvas> -->
+    </div>
+  </div>
+  <style>
+    .esto {
+
+      position: relative;
+      height: 100%;
+      width: 100%;
+      transform-style: preserve-3d;
+      overflow: hidden;
+      cursor: default;
+      transform: translateZ(0px);
+      backface-visibility: hidden;
+      will-change: transform;
+      user-select: none;
+      touch-action: manipulation;
+      scrollbar-width: none;
+
+    }
+
+    .bOxpoT {
+      width: 256.484px;
+      height: 350px;
+      position: absolute;
+      transition: none;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: white;
+      transform-origin: center center 0px;
+      will-change: transform;
+      transform: translate3d(0px, 0px, 0px);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    .bOxpoT::before {
+      content: "";
+      position: absolute;
+      inset: 0px;
+      pointer-events: none;
+      z-index: 2;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 30px inset;
+    }
+
+    .bOxpoT img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02) translate3d(0px, 0px, 0px);
+      backface-visibility: hidden;
+    }
+  </style>
+
+
+  <div class="bento">
+    <article class="piece">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates amet enim illo neque porro nostrum? Accusamus recusandae, iusto ullam autem praesentium beatae et obcaecati odit aperiam totam eius quae exercitationem!</p>
+      <span class="figma-ish">lorem ipsum</span>
+
+      <div class="design-wrap"><span class="design-phrase">
+          Design review
+          <span class="handle tl"></span>
+          <span class="handle tr"></span>
+          <span class="handle bl"></span>
+          <span class="handle br"></span>
+          <!-- <span class="drag-cursor" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 2.2 L5 20.5 L9.9 16 L13.1 22.6 L15.9 21.3 L12.7 14.7 L19.4 14.2 Z" fill="#F4F1EB" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"></path>
+            </svg>
+          </span> -->
+        </span>
+      </div>
+    </article>
+    <article class="piece"></article>
+    <article class="piece"></article>
+    <article class="piece"></article>
+    <article class="piece"></article>
+    <article class="piece"></article>
+    <article class="piece"></article>
+    <article class="piece"></article>
+    <article class="piece"></article>
+    <article class="piece"></article>
+  </div>
+
+  <style>
+
+
+  </style>
+
+</body>
+
+</html>

@@ -11,10 +11,10 @@ declare(strict_types=1);
 <form method="post" action="">
     
        
-          <label for="formMatriz">ESCRIBE una Matriz</label>
-          <input type="text" class="form-control" name="formMatriz" id="formMatriz" value="<?php echo $formMatriz ?? '' ?>" />
+          <label for="numeros">ESCRIBE una Matriz</label>
+          <input type="text" class="form-control" name="numeros" id="numeros" value="<?php echo $numeros ?? '' ?>" />
           <p class="text-danger small">
-            <?php echo $formMatrizError ?? ''; ?>
+            <?= $errores['numeros']?>
           </p>
         
 

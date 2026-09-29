@@ -73,7 +73,7 @@ class FrontController
          Route::add(
             '/ej-5',
             function () {
-                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosSortedController();
+                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosMatrizController();
                 $controlador->ejercicio();
             },
             'get'
@@ -81,7 +81,7 @@ class FrontController
           Route::add(
             '/ej-5',
             function () {
-                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosSortedController();
+                $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosMatrizController();
                 $controlador->doEjercicio();
             },
             'post'
@@ -104,6 +104,29 @@ class FrontController
             },
             'post'
         );
+
+
+
+
+        //no pueden llevar -- en el nombre (los controllers)
+         Route::add(
+            '/ej-otros',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosOtrosController();
+                $controlador->ejercicio();
+            },
+            'get'
+        );
+          Route::add(
+            '/ej-otros',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosOtrosController();
+                $controlador->doEjercicio();
+            },
+            'post'
+        );
+
+
 
         Route::add(
             '/blanco',
