@@ -12,7 +12,9 @@ declare(strict_types=1);
     
        
           <label for="letras">ESCRIBE letras</label>
-          <input required type="text" class="form-control" name="letras" id="letras" value="<?php echo $formLetras ?? '' ?>" />
+          <textarea required type="text" class="form-control" name="letras" id="letras" >
+            <?php echo $formLetras ?? '' ?>"
+</textarea>
           <p class="text-danger small">
             <?php echo $formLetrasError ?? ''; ?>
           </p>
