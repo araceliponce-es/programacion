@@ -41,7 +41,7 @@ declare(strict_types=1);
   <!-- muestra resultados, si existen -->
   <?php if (isset($result)) {
     foreach ($result as $key => $value) {
-      echo $value;
+      echo $value . "    ";
     }
   } ?>
 

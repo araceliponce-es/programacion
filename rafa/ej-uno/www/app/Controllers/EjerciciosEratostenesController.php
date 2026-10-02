@@ -67,24 +67,19 @@ class EjerciciosEratostenesController extends \Com\Daw2\Core\BaseController
                     continue;
                 }
 
-                //encuentra la posicion del numero i actual en el array
-                $position = array_search($i, $tempArray);
-
-                // luego haz un loop por el array, pero a los que estan posicionados adelante
-                for ($j = $position + 1; $j <= $trimmedInput; $j++) {
-                    if ($tempArray[$j] % $i == 0 && !in_array($i, $numbersToRemove)) {
+                //por ejm, si i vale 5, revisa si 6 NO, revisa si 7 es divisible divisible entre 5
+                for ($j = $i + 1; $j <= $trimmedInput; $j++) {
+                    if ($j % $i == 0 && !in_array($j, $numbersToRemove)) {
                         //si es multiplo && no esta alli de antes. anadirlo a numberstoremove
                         array_push($numbersToRemove, $j);
-
-                        // array_push($numbersToRemove, $tempArray[$j]);
                     }
                 }
             }
 
             // remover comparando los diferentes
-            // $result = array_diff($result, $numbersToRemove);
+            $result = array_diff($tempArray, $numbersToRemove);
             // $result =  $numbersToRemove;
-            $result =  $tempArray; //0...9 
+            // $result =  $tempArray; //0...9 
 
 
             $this->ejercicio(filter_var($trimmedInput, FILTER_SANITIZE_FULL_SPECIAL_CHARS), $errores, $result);
