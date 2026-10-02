@@ -47,5 +47,13 @@ declare(strict_types=1);
 
 
 
+  <div>
+    <a href="https://regex101.com/">regexp checker</a>
+    <a href="https://www.regular-expressions.info/unicodecategory.html">mas expresiones</a>
+
+    <P>\P{L} con p mayuscula matches a lo que no es letras</P>
+
+    <P>\p{L} con p mayuscula matches solo letras (distintos idiomas)</P>
+  </div>
 
 </div>

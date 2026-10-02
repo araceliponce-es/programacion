@@ -46,16 +46,11 @@ class EjerciciosIterativosLetrasController extends \Com\Daw2\Core\BaseController
             $trimmedLetras = $this->clean($trimmedLetras);
             //cuantos chars tiene el textarea 
             $chars = preg_split('//u', $trimmedLetras, -1, PREG_SPLIT_NO_EMPTY);
-            $counter = array_count_values($chars);
 
 
-            $result = [];
+            $result = array_count_values($chars);
 
-            foreach ($counter as $char => $ocurrences) {
-                //rESULT ES UN ARRAY ASOCIATIVO DE LETRA:COUNTER
 
-                $result[$char] = $ocurrences;
-            }
             //asort ordena de menor a mayor por los Values
             arsort($result);
 
@@ -127,10 +122,7 @@ class EjerciciosIterativosLetrasController extends \Com\Daw2\Core\BaseController
     //cleans any string of spaces and symbols
     private function clean($string)
     {
-        $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-        $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-
-        return preg_replace('/-+/', ' ', $string); // Replaces multiple hyphens with single space.
+        return preg_replace('/[^A-Za-z]/', '', $string);  // Removes everything that is not a-z o A-Z
     }
 
 

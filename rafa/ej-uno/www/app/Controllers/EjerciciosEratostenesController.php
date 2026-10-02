@@ -49,7 +49,42 @@ class EjerciciosEratostenesController extends \Com\Daw2\Core\BaseController
         //primero checkea validez
         if ($errores == '') {
 
-            $result[0] = $trimmedInput;
+            $result = [];
+            $tempArray = [];
+            $numbersToRemove = [];
+            for ($i = 2; $i <= $trimmedInput; $i++) {
+                // into $result, push $i
+                // array_push($result, $i);
+                array_push($tempArray, $i);
+            }
+
+            // now, remove the multiplos of first untouched number
+            //end(array) encuentra el ultimo value del array (si en el input puso 6, entonces va de 2 a ese numero)
+            for ($i = 2; $i <= $trimmedInput; $i++) {
+
+                // si ese ARRAY YA ESTA EN EL ARRAY no se le hace nada
+                if (in_array($i, $numbersToRemove)) {
+                    continue;
+                }
+
+                //encuentra la posicion del numero i actual en el array
+                $position = array_search($i, $tempArray);
+
+                // luego haz un loop por el array, pero a los que estan posicionados adelante
+                for ($j = $position + 1; $j <= $trimmedInput; $j++) {
+                    if ($tempArray[$j] % $i == 0 && !in_array($i, $numbersToRemove)) {
+                        //si es multiplo && no esta alli de antes. anadirlo a numberstoremove
+                        array_push($numbersToRemove, $j);
+
+                        // array_push($numbersToRemove, $tempArray[$j]);
+                    }
+                }
+            }
+
+            // remover comparando los diferentes
+            // $result = array_diff($result, $numbersToRemove);
+            // $result =  $numbersToRemove;
+            $result =  $tempArray; //0...9 
 
 
             $this->ejercicio(filter_var($trimmedInput, FILTER_SANITIZE_FULL_SPECIAL_CHARS), $errores, $result);
