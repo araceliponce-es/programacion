@@ -7,10 +7,26 @@
   <title>Document</title>
 
   <!-- BBDD 6 ENTIDADES, LOGIN,REGISTRO -->
+  <style>
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem 4rem;
+    }
+
+    article {
+      text-align: center;
+      background-color: plum;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Hola Mundo</h1>
+  <h1>poke pair</h1>
+
+  <main></main>
+
+
 
   <script>
     console.log("Este mensaje se ejecuta desde el código interno.");
@@ -24,15 +40,109 @@
     
      */
 
-    fetch('https://pokeapi.co/api/v2/pokemon/1/')
-      .then(response => response.json())
-      .then(data => console.log(data));
+    // fetch('https://pokeapi.co/api/v2/pokemon/1/')
+    //   .then(response => response.json())
+    //   .then(data => console.log(data));
 
 
     // necesita 8 random ids (juego de 4x4 son 16, 8 pares)
     // les asignas posiciones
     // a cada uno se le renderiza una carta.
     // no solo css para voltear cada carta
+
+
+
+
+
+    const NUMBER_POKEMONS = 500;
+    const NUMBER_PAIRS = 8;
+
+    let data = [];
+
+
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+      console.log("DOM fully loaded and parsed");
+
+      chooseIds()
+
+    });
+
+
+    function populateCard(data) {
+      const article = document.createElement('article');
+
+      article.innerHTML = `<strong>${data.name}</strong>
+      <img src="${data.sprites.front_shiny}" alt="">`
+
+      return article;
+    }
+
+
+    // genera 8 ids de pokemones aleatorios y llama a getcardata
+    function chooseIds() {
+
+      const ids = [];
+      //todo: asegurarse que no se repita ???
+      for (let index = 0; index < NUMBER_PAIRS; index++) {
+        const id = Math.floor(Math.random() * NUMBER_POKEMONS) + 1;
+
+        if (!ids.includes(id)) {
+          ids.push(id);
+        } else {
+          index--;
+        }
+
+      }
+
+      console.log({ ids })
+
+      // get data
+      ids.forEach(async (element) => {
+
+        const cardData = await getCardDataById(element);
+
+        // POPLUATE UN ARRAY DESORDENADO
+        const article = populateCard(cardData)
+        document.querySelector('main').append(article)
+
+
+      });
+
+      //Y LLUEGO CON ESE ARRAY DESORDANDO POPULAR CARDS
+
+
+    }
+
+
+    function populateandRandomizeData() {
+
+    }
+
+    function render() {
+
+    }
+
+    async function getCardDataById(id) {
+
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${id}/`
+      );
+
+      const data = await response.json();
+
+      return data;
+
+    }
+
+
+
+
+    function shuffle() {
+
+    }
+
+
   </script>
 </body>
 

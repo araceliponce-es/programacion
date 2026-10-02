@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CALCULADORA</title>
+    <style type="text/css">
+        html {
+            color-scheme: dark light;
+        }
+
+        .grid-center {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            min-height: 100svh;
+        }
+
+        #calculadora {
+            background: gray;
+            border: 0;
+            font-family: Arial;
+        }
+
+        #calculadora td {
+            padding: 4px;
+        }
+
+        .cajita_valor {
+            background-color: #acff38;
+            color: #467702;
+            border: 1px solid #454545;
+            width: 130px;
+            height: 26px;
+            font-family: Arial, Helvetica;
+            font-size: 20px;
+            line-height: 26 px;
+            text-align: right;
+        }
+
+        [type="button"],
+        [type="reset"] {
+            cursor: pointer;
+        }
+
+        .boton {
+            width: 24px;
+            border: 1px solid currentColor;
+            background-color: #fff;
+            color: rgb(48, 47, 47);
+            border-radius: .3rem;
+        }
+
+        .boton--largo {
+            width: 62px;
+        }
+
+        .funcion {
+            font-weight: bold;
+            color: #b00;
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="grid-center">
+        <table id="calculadora">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="valor_numero" maxlength="20" value="0" class="cajita_valor" readonly="true">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" id="potencia" value="exp" class="boton boton--largo funcion">
+                </td>
+                <td>
+                    <input type="button" id="Dividir" value="/" class="boton funcion">
+                </td>
+                <td>
+                    <input type="button" id="Multiplicar" value="x" class="boton funcion">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="7" value="7" class="boton">
+                </td>
+                <td>
+                    <input type="button" id="8" value="8" class="boton">
+                </td>
+                <td>
+                    <input type="button" id="9" value="9" class="boton">
+                </td>
+                <td>
+                    <input type="button" id="Restar" value="-" class="boton funcion">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="4" value="4" class="boton">
+                </td>
+                <td>
+                    <input type="button" id="5" value="5" class="boton">
+                </td>
+                <td>
+                    <input type="button" id="6" value="6" class="boton">
+                </td>
+                <td>
+                    <input type="button" id="Sumar" value="+" class="boton funcion">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="1" value="1" class="boton">
+                </td>
+                <td>
+                    <input type="button" id="2" value="2" class="boton">
+                </td>
+                <td>
+                    <input type="button" id="3" value="3" class="boton">
+                </td>
+                <td>
+                    <input type="button" id="EsIgual" value="=" class="boton funcion">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" id="0" value="0" class="boton boton--largo">
+                </td>
+                <td>
+                    <input type="button" id="btnDecimal" value="," class="boton">
+                </td>
+                <td>
+                    <input type="reset" id="C" value="C" class="boton funcion" title="Clear all">
+                </td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>

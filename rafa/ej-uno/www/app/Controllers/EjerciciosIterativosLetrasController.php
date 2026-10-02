@@ -52,12 +52,11 @@ class EjerciciosIterativosLetrasController extends \Com\Daw2\Core\BaseController
             $result = [];
 
             foreach ($counter as $char => $ocurrences) {
-                // $result .= "<br>" . $char . " occurs " . $ocurrences;
                 //rESULT ES UN ARRAY ASOCIATIVO DE LETRA:COUNTER
 
                 $result[$char] = $ocurrences;
             }
-            //asort ordena de menor a mayor por los values
+            //asort ordena de menor a mayor por los Values
             arsort($result);
 
 
@@ -67,13 +66,71 @@ class EjerciciosIterativosLetrasController extends \Com\Daw2\Core\BaseController
         }
     }
 
+
+
+
+
+    //ejercicio palabras. Crea un script que reciba una cadena de texto y muestre por pantalla una lista de las palabras existentes en ella ordenadas por número de apariciones.------------------------------------------------------
+
+    public function ejercicioPalabras(string $palabras = '', string $errores = '', array $result = [])
+    {
+        $data = array(
+            'titulo' => 'cuenta palabras',
+            'breadcrumb' => ['Inicio', 'cuenta palabras'],
+            'seccion' => '/inicio'
+        );
+
+        $data['errores'] = $errores;
+        $data['palabras'] = $palabras;
+        $data['result'] = $result;
+
+
+        $this->view->showViews(array('templates/header.view.php', 'ejercicios-iterativos--palabras.view.php', 'templates/footer.view.php'), $data);
+    }
+
+
+    public function doEjercicioPalabras(): void
+    {
+
+        // this-> se usa cuando es un metodo funtion de la calse, si es de php no necesita
+
+        $trimmedUserInput = strtolower(trim($_POST['palabras'] ?? '')); //trim va al inicio y envolviendo
+        $errores = $this->checkEjercicio($trimmedUserInput);
+
+        //primero checkea validez
+        if ($errores == '') {
+            $trimmedUserInput = $this->clean($trimmedUserInput);
+
+            // en explode es primero el delimitador y luego el string
+            $exploded = explode(' ', $trimmedUserInput);
+
+
+            $result = $exploded;
+
+            //eneste ejercicio key es el numero de apariciones y el value es la palabra.
+            //ordenar por key
+            krsort($result);
+
+
+            $this->ejercicioPalabras(filter_var($trimmedUserInput, FILTER_SANITIZE_FULL_SPECIAL_CHARS), $errores, $result);
+        } else {
+            $this->ejercicioPalabras(filter_var($trimmedUserInput, FILTER_SANITIZE_FULL_SPECIAL_CHARS), $errores);
+        }
+    }
+
+
+
+
+    //fin de ejercicio palabras------------------------------------------------------
+
+
     //cleans any string of spaces and symbols
     private function clean($string)
     {
         $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
         $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 
-        return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
+        return preg_replace('/-+/', ' ', $string); // Replaces multiple hyphens with single space.
     }
 
 

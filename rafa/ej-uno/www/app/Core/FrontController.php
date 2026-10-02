@@ -44,7 +44,7 @@ class FrontController
             },
             'get'
         );
-         Route::add(
+        Route::add(
             '/ej-3',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosEstructurasController();
@@ -53,7 +53,7 @@ class FrontController
             'get'
         );
         //ej-4: get usa el ejercicio1() y post usa doEjercicio1()
-         Route::add(
+        Route::add(
             '/ej-4',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosController();
@@ -61,7 +61,7 @@ class FrontController
             },
             'get'
         );
-          Route::add(
+        Route::add(
             '/ej-4',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosController();
@@ -69,8 +69,8 @@ class FrontController
             },
             'post'
         );
-//no pueden llevar -- en el nombre (los controllers)
-         Route::add(
+        //no pueden llevar -- en el nombre (los controllers)
+        Route::add(
             '/ej-5',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosMatrizController();
@@ -78,7 +78,7 @@ class FrontController
             },
             'get'
         );
-          Route::add(
+        Route::add(
             '/ej-5',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosMatrizController();
@@ -88,19 +88,21 @@ class FrontController
         );
 
         //no pueden llevar -- en el nombre (los controllers)
-         Route::add(
+        Route::add(
             '/ej-6',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosLetrasController();
-                $controlador->ejercicio();
+                // $controlador->ejercicio();
+                $controlador->ejercicioPalabras();
             },
             'get'
         );
-          Route::add(
+        Route::add(
             '/ej-6',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosIterativosLetrasController();
-                $controlador->doEjercicio();
+                // $controlador->doEjercicio();
+                $controlador->doEjercicioPalabras();
             },
             'post'
         );
@@ -109,7 +111,7 @@ class FrontController
 
 
         //no pueden llevar -- en el nombre (los controllers)
-         Route::add(
+        Route::add(
             '/ej-otros',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosOtrosController();
@@ -117,7 +119,7 @@ class FrontController
             },
             'get'
         );
-          Route::add(
+        Route::add(
             '/ej-otros',
             function () {
                 $controlador = new \Com\Daw2\Controllers\EjerciciosOtrosController();

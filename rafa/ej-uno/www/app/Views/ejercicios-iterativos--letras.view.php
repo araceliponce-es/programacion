@@ -12,9 +12,7 @@ declare(strict_types=1);
 
 
   <label for="letras">ESCRIBE letras</label>
-  <textarea required type="text" class="form-control" name="letras" id="letras">
-            <?= htmlspecialchars($letras ?? '') ?>
-</textarea>
+  <textarea required type="text" class="form-control" name="letras" id="letras"><?= htmlspecialchars($letras ?? '') ?></textarea>
   <p class="text-danger small">
     <?php echo $errores ?? ''; ?>
   </p>
@@ -30,10 +28,10 @@ declare(strict_types=1);
 
 
 
-<div>
+<div class="pt-5">
 
 
-  <div class="bg-danger bg-red bg-blue d-flex gap-4">
+  <div class="bg-danger bg-red bg-blue d-flex flex-wrap gap-4">
     <!-- <?= $result; ?> -->
 
     <?php if (isset($result)) {
