@@ -32,7 +32,6 @@ declare(strict_types=1);
 
 
   <div class="bg-danger bg-red bg-blue d-flex flex-wrap gap-4">
-    <!-- <?= $result; ?> -->
 
     <?php if (isset($result)) {
 

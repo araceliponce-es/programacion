@@ -109,6 +109,30 @@ class FrontController
 
 
 
+        //no pueden llevar -- en el nombre (los controllers)
+        Route::add(
+            '/ej-7',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosEratostenesController();
+                $controlador->ejercicio();
+            },
+            'get'
+        );
+        Route::add(
+            '/ej-7',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosEratostenesController();
+                $controlador->doEjercicio();
+            },
+            'post'
+        );
+
+
+
+
+
+
+
 
         //no pueden llevar -- en el nombre (los controllers)
         Route::add(
