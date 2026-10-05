@@ -130,6 +130,25 @@ class FrontController
 
 
 
+        //json
+        Route::add(
+            '/ej-8',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosJsonController();
+                $controlador->ejercicio();
+            },
+            'get'
+        );
+        Route::add(
+            '/ej-8',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosJsonController();
+                $controlador->doEjercicio();
+            },
+            'post'
+        );
+
+
 
 
 

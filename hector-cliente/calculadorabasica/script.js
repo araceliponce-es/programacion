@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let clickedValue = e.target.value;
       if (clickedValue === 'C') {
-        //darC() llama a refrescar() solamente
         darC()
         return;
 
@@ -52,18 +51,35 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
 
       } else {
-        // si operacion no tiene valor
+        // si operacion no tiene valor, es un numero o una coma
         if (operation == '') {
+
+          if (clickedValue === decimalSeparator) {
+            number1 = darComa(number1)
+            refrescar()
+            return;
+          }
+
           // concatena al number1
           number1 += clickedValue;
+
           console.log({ number1 })
-          document.getElementById('valor_numero').value = number1
+          refrescar()
+
 
         } else {
+
+          if (clickedValue === decimalSeparator) {
+            number2 = darComa(number2)
+            refrescar()
+            return
+          }
           // concatena al number2
           number2 += clickedValue;
+
+
           console.log({ number2 })
-          document.getElementById('valor_numero').value = number2
+          refrescar()
 
         }
 
@@ -89,19 +105,33 @@ function darNumero(numero) {
 
 // Añade la coma decimal.Realiza la comprobación para que solo los números positivos y el 0 puedan ser decimales, descartando los números negativos decimales.Si el resultado actual es negativo y se intenta añadir decimales, se colocará automáticamente un 0.
 
-function darComa() {
+function darComa(number) {
 
-  if (number1 < 0) return;
+  console.log(number.includes('.'))
+  console.log('1.1'.includes('.'))
+  console.log(number)
 
-  // number1
+  //si es negativo o ya tiene un decimal
+  if (number < 0 || number.includes('.')) return;
+  return number += '.';
 
 }
 
 
 // Función de reinicio(tecla C).Borra todos los resultados almacenados y restablece las variables a 0.
 function darC() {
-  refrescar()
+  number1 = ''
+  number2 = ''
+  result = 0
+  operation = ''
+  document.getElementById('valor_numero').value = result
+}
 
+// Actualiza el valor visible en la caja de texto / pantalla de la calculadora en función de los botones o números pulsados para reflejar el estado actual.
+function refrescar() {
+  let numberToShow = number2 > 0 ? number2 : number1;
+  console.log({ numberToShow })
+  document.getElementById('valor_numero').value = numberToShow
 }
 
 // Almacena los valores introducidos y la operación seleccionada para procesarlos al pulsar igual.Recibe como parámetro un número asignado a cada operación:
@@ -141,15 +171,7 @@ function esIgual() {
   document.getElementById('valor_numero').value = result
 }
 
-// Actualiza el valor visible en la caja de texto / pantalla de la calculadora en función de los botones o números pulsados para reflejar el estado actual.
 
-function refrescar() {
-  number1 = ''
-  number2 = ''
-  result = 0
-  operation = ''
-  document.getElementById('valor_numero').value = result
-}
 
 
 
