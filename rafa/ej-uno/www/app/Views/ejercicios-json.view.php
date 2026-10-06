@@ -21,9 +21,10 @@ declare(strict_types=1);
         </thead>
         <tbody>
           <?php
-          foreach ($resultado as $nombreAsignatura => $datos) {
+          foreach ($resultado['materias'] as $nombreAsignatura => $datos) {
           ?>
             <tr>
+              <!-- si no hay media, porque no hay alumnos: Sin alumnado -->
               <?php
               if ($datos['media'] === null) {
               ?>
@@ -46,6 +47,42 @@ declare(strict_types=1);
           ?>
         </tbody>
       </table>
+
+
+      <!-- listado con los alumnos que han aprobado todo, los alumnos que han suspendido al menos una asignatura y los alumnos que no promocionan (alumnos que han suspendido más de una asignatura).  -->
+
+
+
+      <!-- listado con Nombre, cantidad de materias aprobadas, cantidad de materias desaprobadas -->
+
+      <table>
+        <thead>
+          <tr>
+            <th>nombre</th>
+            <th>Suspensos</th>
+            <th>Aprobados</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($resultado['alumnos'] as $nombreAlumno => $datos) {
+          ?>
+            <tr>
+              <td><?php echo $nombreAlumno; ?></td>
+              <td><?php echo $datos['desaprobados'] ?? 'fhgfhfhg'; ?></td>
+              <td><?php echo $datos['aprobados'] ?? 'gjgjgjhj'; ?></td>
+
+            </tr>
+          <?php
+          }
+          ?>
+        </tbody>
+      </table>
+
+      <?php var_dump($resultado['alumnos']) ?>
+
+
+
     </div>
   <?php
   }
