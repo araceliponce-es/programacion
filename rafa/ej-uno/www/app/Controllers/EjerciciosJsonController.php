@@ -110,57 +110,40 @@ class EjerciciosJsonController extends \Com\Daw2\Core\BaseController
     private function obtenerAlumnosResumen(array $datos): array
     {
         $resultado = [];
-        //resultado de tipo: $alumnos = ['alumnox' => ['aprobados' => 10, 'desaprobados' => 11], 'alumno y' => ['aprobados' => 10, 'desaprobados' => 118]];
+        $resultadoAlumnos = []; //para no mutar el array de linea anterior
 
-        //cada materia tiene como valor al grupo de alumnos (cada alumno viene con una calificacion en esa materia)
-        foreach ($datos as $asignatura => $alumnos) {
+        //cada materia tiene como valor al grupo de alumnos
+        // cada alumno viene con una calificacion en esa materia
+        //agrupamos de modo que resultado = ['nombre de alumno' => [10,5,2,7]]
 
-            // $datosAlumnos = [];
-
-            foreach ($alumnos as $nombre => $nota) {
-                // $randomId = rand(10, 100000);
-                $datosAlumno = [
-                    // 'id' => $randomId,
-                    $nombre => [
-                        'desaprobados' => 0,
-                        'aprobados' => 0,
-                    ]
-                ];
-
-                // array_search(mixed $needle, array $haystack, bool $strict = false): int|string|false
-                // $needle: The value you want to search for.
-                // $haystack: The array you want to search inside.
-                // $strict (Optional): If set to true, the function checks both the value and the data type (strict comparison like ===). Defaults to false. 
-                // si el alumno (su nombre) ya esta dentro de result, entonces le suma 1 a sus aprobados o desaprobados, si no , lo agrega y luego le suma
-                $posicion = array_search($nombre, $datosAlumno);
-
-                if ($posicion !== false) {
-
-                    if ($nota >= 5) {
-                        $datosAlumno[$nombre]['aprobados']++;
-                    } else {
-                        $datosAlumno[$nombre]['desaprobados']++;
-                    }
-                } else {
-                    // $datosAlumno = [
-                    //     'nombre' => $nombre,
-                    //     'desaprobados' => 0,
-                    //     'aprobados' => 0,
-                    // ];
-
-                    if ($nota >= 5) {
-                        $datosAlumno[]['aprobados']++;
-                    } else {
-                        $datosAlumno[]['desaprobados']++;
-                    }
-                }
-
-                $resultado['alumnos'][] = $datosAlumno;
+        //foreach, si colocas key => value lees key y value
+        //foreach, si usas solo value (sin flecha), usas solo value
+        foreach ($datos as $alumnos) {
+            foreach ($alumnos as $alumno =>$nota) {
+                $resultado[$alumno][] = $nota;
             }
-            // $datosAsignatura['media'] = ($numAlumnos > 0) ? $notaAgregada / $numAlumnos : null;
-            // $resultado[$nombre] = $datosAlumnos;
         }
-        return $resultado;
+
+        foreach ($resultado as $alumno => $notas) {
+
+            //importante.crea 1 array por cada alumno, con las keys a tener ('aprobados' y 'desaprobados')
+            $resultadoAlumnos[$alumno] = [
+                'aprobados' => 0,
+                'desaprobados' => 0,
+            ];
+            foreach ($notas as $nota) {
+
+                        if ($nota >= 5) {
+                            $resultadoAlumnos[$alumno]['aprobados']++;
+                        } else {
+                            $resultadoAlumnos[$alumno]['desaprobados']++;
+                        }
+            }
+
+        }
+
+
+        return $resultadoAlumnos;
     }
 
     private function checkEjercicio(string $json)

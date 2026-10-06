@@ -79,7 +79,7 @@ declare(strict_types=1);
         </tbody>
       </table>
 
-      <?php var_dump($resultado['alumnos']) ?>
+<!--      --><?php //var_dump($resultado['alumnos']) ?>
 
 
 
