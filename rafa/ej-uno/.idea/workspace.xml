@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51583ef3-4c17-4610-9fa9-1d5fdcdcac4f" name="Changes" comment="antes de cambiar codigo, martes">
+      <change beforePath="$PROJECT_DIR$/../../hector-cliente/calculadorabasica/alumnos.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hector-cliente/calculadorabasica/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hector-cliente/calculadorabasica/otro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hector-cliente/calculadorabasica/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hector-cliente/calculadorabasica/script2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../hector-cliente/calculadorabasica/script2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Controllers/EjerciciosJsonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/EjerciciosJsonController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Views/ejercicios-json.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/ejercicios-json.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,61 +40,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.000099628792901" />
-      <entry key="S2" value="1.121046087144878" />
-      <entry key="S5" value="1.6118967519012268" />
-      <entry key="S10" value="2.094658914461359" />
-      <entry key="S30" value="2.806292130316722" />
-      <entry key="S60" value="3.530639651598944" />
-      <entry key="M2" value="5.181043994191837" />
-      <entry key="M5" value="11.026401533745739" />
-      <entry key="M10" value="22.239827290755684" />
-      <entry key="M15" value="32.26980664574301" />
-      <entry key="M30" value="50.93037374202936" />
-      <entry key="H1" value="65.95554955539305" />
-      <entry key="H2" value="75.5847199376425" />
-      <entry key="H4" value="81.04854843012082" />
-      <entry key="D1" value="85.97232557424756" />
-      <entry key="W1" value="86.85228750200098" />
+      <entry key="MS100" value="1.0000000000000002" />
+      <entry key="MS500" value="1.0007178649103463" />
+      <entry key="S2" value="1.1636856778896039" />
+      <entry key="S5" value="1.4849200690435276" />
+      <entry key="S10" value="1.7154851212843503" />
+      <entry key="S30" value="2.668966135911126" />
+      <entry key="S60" value="3.919629289551062" />
+      <entry key="M2" value="5.126474648818492" />
+      <entry key="M5" value="7.089636396868187" />
+      <entry key="M10" value="13.072256623812748" />
+      <entry key="M15" value="20.938801125808666" />
+      <entry key="M30" value="40.681302284907915" />
+      <entry key="H1" value="60.681066724309915" />
+      <entry key="H2" value="75.20005161538563" />
+      <entry key="H4" value="83.99003743863474" />
+      <entry key="D1" value="92.23971163021085" />
+      <entry key="W1" value="93.74617705069237" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="5.760500711516702E-192" />
-      <entry key="S2" value="1.5492277554749824E-48" />
-      <entry key="S5" value="7.539421142213121E-20" />
-      <entry key="S10" value="2.891371181133625E-10" />
-      <entry key="S30" value="8.961210602449318E-4" />
-      <entry key="S60" value="0.041406421491418884" />
-      <entry key="M2" value="0.29991298994095383" />
-      <entry key="M5" value="1.1401845758772156" />
-      <entry key="M10" value="2.0578302193183724" />
-      <entry key="M15" value="2.641085757370485" />
-      <entry key="M30" value="3.5379502638515152" />
-      <entry key="H1" value="4.175403287832946" />
-      <entry key="H2" value="4.5605512297986355" />
-      <entry key="H4" value="4.77294737207367" />
-      <entry key="D1" value="4.961090439715275" />
-      <entry key="W1" value="4.994414675253882" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="2.2192072955132895E-208" />
+      <entry key="S5" value="8.705045472180464E-84" />
+      <entry key="S10" value="3.106850591188459E-42" />
+      <entry key="S30" value="1.9774500595002302E-14" />
+      <entry key="S60" value="1.9450784343803769E-7" />
+      <entry key="M2" value="6.500248900979329E-4" />
+      <entry key="M5" value="0.0980277525216733" />
+      <entry key="M10" value="0.6033877412565228" />
+      <entry key="M15" value="1.1656651106626885" />
+      <entry key="M30" value="2.3504302653663465" />
+      <entry key="H1" value="3.403268801877995" />
+      <entry key="H2" value="4.117335439803391" />
+      <entry key="H4" value="4.5350919995777925" />
+      <entry key="D1" value="4.919002616092281" />
+      <entry key="W1" value="4.988339618366556" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9395227492140118" />
-      <entry key="MS500" value="0.9876983826656485" />
-      <entry key="S2" value="1.1047166643703143" />
-      <entry key="S5" value="1.5440796329128228" />
-      <entry key="S10" value="2.015682535892768" />
-      <entry key="S30" value="2.755111467313963" />
-      <entry key="S60" value="3.5303629899708526" />
-      <entry key="M2" value="5.436978457890454" />
-      <entry key="M5" value="12.120203707712589" />
-      <entry key="M10" value="24.258869264072658" />
-      <entry key="M15" value="34.878716409614604" />
-      <entry key="M30" value="54.44758300584656" />
-      <entry key="H1" value="70.11898743196369" />
-      <entry key="H2" value="80.1388159760044" />
-      <entry key="H4" value="85.81813923064456" />
-      <entry key="D1" value="90.9328376624628" />
-      <entry key="W1" value="91.84661907838708" />
+      <entry key="MS100" value="0.8888426811665704" />
+      <entry key="MS500" value="0.9773600051192965" />
+      <entry key="S2" value="1.1538879916985612" />
+      <entry key="S5" value="1.4778836826620747" />
+      <entry key="S10" value="1.71090660304378" />
+      <entry key="S30" value="2.6667277618807326" />
+      <entry key="S60" value="3.918150206041918" />
+      <entry key="M2" value="5.126124479135899" />
+      <entry key="M5" value="7.183258482977881" />
+      <entry key="M10" value="13.664050983141403" />
+      <entry key="M15" value="22.09011576619123" />
+      <entry key="M30" value="43.01787729536081" />
+      <entry key="H1" value="64.07454446205539" />
+      <entry key="H2" value="79.31153994699494" />
+      <entry key="H4" value="88.52193048507502" />
+      <entry key="D1" value="97.15813918937795" />
+      <entry key="W1" value="98.73443344092121" />
     </decayedShown>
   </component>
   <component name="PhpDebugGeneral" listening_started="true" xdebug_force_break_when_no_path_mapping="false" xdebug_force_break_when_outside_project="false" />
@@ -146,7 +150,7 @@
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "Docker Compose",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/daw2al15/Descargas/programacion/rafa/ej-uno/www",
+    "last_opened_file_path": "/home/daw2al15/Descargas/programacion/rafa/ej-uno/www/app/Controllers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
@@ -158,6 +162,12 @@
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www/app/Controllers" />
+      <recent name="$PROJECT_DIR$/www/app/Views" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -183,7 +193,8 @@
       <workItem from="1789722280688" duration="1242000" />
       <workItem from="1789723537546" duration="368000" />
       <workItem from="1789725040861" duration="331000" />
-      <workItem from="1791284035137" duration="2504000" />
+      <workItem from="1791284035137" duration="2851000" />
+      <workItem from="1791367596211" duration="999000" />
     </task>
     <task id="LOCAL-00001" summary="antes de cambiar codigo, martes">
       <option name="closed" value="true" />

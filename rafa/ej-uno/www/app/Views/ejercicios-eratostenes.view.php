@@ -29,12 +29,20 @@ declare(strict_types=1);
     <table class="tabla">
       <tr>
         <?php for ($i = 2; $i <= $numero; $i++) {
+            $className = in_array($i, $result)? 'es-primo':'no-esprimo';
           // aqui podria ser: si array $result continene $numero una clase distinta
-          echo "<td>$i</td>";
+          echo "<td class='$className' >$i</td>";
         } ?>
       </tr>
     </table>
   <?php endif ?>
+
+
+    <style>
+        .es-primo{
+            background: cornflowerblue;
+        }
+    </style>
 
 
 

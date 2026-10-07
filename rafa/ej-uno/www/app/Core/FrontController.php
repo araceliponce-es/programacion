@@ -148,6 +148,24 @@ class FrontController
             'post'
         );
 
+//https://centros.edu.xunta.gal/iespazomerce/aulavirtual/mod/book/view.php?id=95276&chapterid=4956
+        Route::add(
+            '/form',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosJsonController();
+                $controlador->ejercicio();
+            },
+            'get'
+        );
+        Route::add(
+            '/form',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\EjerciciosJsonController();
+                $controlador->doEjercicio();
+            },
+            'post'
+        );
+
 
 
 

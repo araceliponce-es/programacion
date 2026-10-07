@@ -16,17 +16,12 @@ const decimalSeparator = new Intl.NumberFormat().format(1.1).charAt(1);
 document.addEventListener('DOMContentLoaded', () => {
 
 
-  console.log(parseFloat("1234,45"))
-  console.log({ operation })
-  //Cambia el valor del btndecimal al decimal separator (sigue siendo coma)
+  // console.log(parseFloat("1234,45"))
+  // console.log({ operation })
+  //Cambia el valor del btn decimal al decimal separator (sigue siendo coma)
   document.getElementById('btnDecimal').value = (decimalSeparator);
 
   document.querySelectorAll('#calculadora input').forEach(input => {
-    // input.addEventListener('click', () => {
-    //   console.log(input.value)
-    // })
-
-    //ambos son lo mismo
 
     input.addEventListener('click', (e) => {
       // console.log('Click:', e.target.value);
@@ -95,14 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-
-// Comprueba los valores de la variable global de resultados.En caso de que el valor de la variable sea 0 o no sea un decimal con 0, automáticamente toma el valor introducido.Si ninguna de estas condiciones se cumple, el nuevo número se concatena / suma al valor total de la variable.
-
-function darNumero(numero) {
-
-}
-
-
 // Añade la coma decimal.Realiza la comprobación para que solo los números positivos y el 0 puedan ser decimales, descartando los números negativos decimales.Si el resultado actual es negativo y se intenta añadir decimales, se colocará automáticamente un 0.
 
 function darComa(number) {
@@ -164,7 +151,7 @@ function operar(valor) {
       console.log('operacion no aceptada')
   }
 
-  // Redondear a 10 decimales
+  // IMPORTANTE: Redondear a 10 decimales
   result = Math.round(result * 1e10) / 1e10;
 
 }
