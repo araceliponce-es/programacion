@@ -42,6 +42,7 @@
         }
     }
     ?>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed <?php echo isset($_COOKIE['dark_mode']) && $_COOKIE['dark_mode'] ? 'dark-mode' : ''; ?>">
 <div class="wrapper">
@@ -140,6 +141,7 @@
 
         <section class="content">
             <div class="container-fluid">
+<!--                <p>aaaaaaaaaaaaaaaaaaa</p>-->
 <?php
 include $_ENV['folder.views'] . '/templates/flash-messages.php';
 ?>

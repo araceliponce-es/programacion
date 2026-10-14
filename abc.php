@@ -59,7 +59,7 @@ echo "<br>";
 var_dump($datos_limpios);
 
 
-function cleanData(array $data, array $rules): array
+function v1cleanData(array $data, array $rules): array
 {
   // Aplicas los filtros a todo el $_POST de forma automática y segura, para renderizarlos luego con un $nombrededato ?? '';
   return filter_var_array($data, $rules);
@@ -67,6 +67,38 @@ function cleanData(array $data, array $rules): array
   //si hubiese puesto aqui 
   //$datos_limpios = filter_var_array($data, $sanitizeRules);
   //hubiera: creado un nuevo variable llamado igual y no modificado a la variable de afuera
+}
+
+function cleanData(array $data, array $rules): array
+{
+  // 1. Sanitizamos los campos normales
+  $datos_aqui = filter_var_array($data, $rules);
+
+  // 2. Comprobamos si existe categoria
+  if (isset($data['categoria'])) {
+
+    // 3. Creamos un array vacío para guardar las categorías limpias
+    $categorias_limpias = [];
+
+    // 4. Recorremos las categorías que ha enviado el usuario
+    foreach ($data['categoria'] as $categoria) {
+
+      // 5. Sanitizamos categorías una a una
+      $categoria_limpia = filter_var(
+        $categoria,
+        FILTER_SANITIZE_FULL_SPECIAL_CHARS
+      );
+
+      // 6. Las añadimos al array de categorías limpias
+      $categorias_limpias[] = $categoria_limpia;
+    }
+
+    // 7. Guardamos ese array de categorias limpias como el valor de resultado['categoria']
+    $datos_aqui['categoria'] = $categorias_limpias;
+  }
+
+  // 8. Devolvemos todos los datos
+  return $datos_aqui;
 }
 
 
