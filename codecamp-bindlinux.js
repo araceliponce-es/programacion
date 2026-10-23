@@ -91,11 +91,49 @@ console.log(lastCharacter)
 
 
 
+const user = {
+  username: "coder123",
+  score: 0,
+  isActive: false,
+  nickname: null
+};
+
+// Object.hasOwn() correctly reports these all exist
+console.log(Object.hasOwn(user, "score"));    // true  (value is 0, but property exists)
+console.log(Object.hasOwn(user, "isActive")); // true  (value is false, but property exists)
+console.log(Object.hasOwn(user, "nickname")); // true  (value is null, but property exists)
+console.log(Object.hasOwn(user, "email"));   // false (property was never added)
+
+// Danger! Using if() directly gives wrong results for falsy values
+if (user.score) {
+  console.log("Has score"); // This will NOT print even though score exists!
+}
+
+// Safe! Object.hasOwn() gives correct result
+if (Object.hasOwn(user, "score")) {
+  console.log("Has score:", user.score); // Has score: 0
+}
 
 
 
 
 
+
+//PRIMITIVOS Y NO PRIMITIVOS
+
+const originalPerson = { name: "John", age: 30 };
+const copiedPerson = originalPerson;
+
+originalPerson.age = 31;
+
+console.log(copiedPerson.age); // 31 (NO PRIMITIVOS SON LOS OBJECTS, ARRAYS Y FUNCIONES, AL COPIARLO CUALQUIER CAMBIO AL ORIGINAL AFECTA A LA COPA (porque se copió por  referencia (copia superficial)))
+
+
+let age1 = 5;
+let age2 = age1;
+age1 = 10;
+
+console.log(age2); // 5 (PRIMITIVO, cambio del valor original no afecta al valor Y que ya lo usó)
 
 
 

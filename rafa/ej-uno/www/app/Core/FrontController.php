@@ -148,7 +148,7 @@ class FrontController
             'post'
         );
 
-//https://centros.edu.xunta.gal/iespazomerce/aulavirtual/mod/book/view.php?id=95276&chapterid=4956
+        //https://centros.edu.xunta.gal/iespazomerce/aulavirtual/mod/book/view.php?id=95276&chapterid=4956
         Route::add(
             '/form',
             function () {
@@ -188,6 +188,19 @@ class FrontController
             },
             'post'
         );
+
+
+
+
+        Route::add(
+            '/test-conexion',
+            function () {
+                $controlador = new \Com\Daw2\Controllers\TrabajadorController();
+                $controlador->testDb();
+            },
+            'get'
+        );
+
 
 
 

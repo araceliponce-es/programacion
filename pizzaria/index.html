@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIZZA RIA</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+    body {
+      font-family: "Work Sans", sans-serif;
+      font-optical-sizing: auto;
+      /* font-weight: <weight>; */
+      font-style: normal;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .title,
+    .logo {
+      font-family: "Jersey 10", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="/">RIA</a>
+  </header>
+
+
+  <main>
+
+
+    <main>
+      <section class="section__popular" aria-label="Contenido popular">
+
+        <div class="custom-swiper__layout">
+          <button class="custom-swiper__arrow custom-swiper__arrow--prev" type="button" aria-label="Diapositivas anteriores">
+            <span aria-hidden="true">&#10094;</span>
+          </button>
+
+          <swiper-container class="custom-swiper" init="false" aria-label="Contenido popular">
+            <swiper-slide>
+              <article class="custom-swiper__card">
+                <div><img src="pizza.png" alt=""></div>
+                <p><b>Un buen nombre de pizza</b></p>
+              </article>
+            </swiper-slide>
+            <swiper-slide>
+              <article class="custom-swiper__card">
+                <div><img src="pizza.png" alt=""></div>
+                <p><b>Un buen nombre de pizza</b></p>
+              </article>
+            </swiper-slide><swiper-slide>
+              <article class="custom-swiper__card">
+                <div><img src="pizza.png" alt=""></div>
+                <p><b>Un buen nombre de pizza</b></p>
+              </article>
+            </swiper-slide><swiper-slide>
+              <article class="custom-swiper__card">
+                <div><img src="pizza.png" alt=""></div>
+                <p><b>Un buen nombre de pizza</b></p>
+              </article>
+            </swiper-slide><swiper-slide>
+              <article class="custom-swiper__card">
+                <div><img src="pizza.png" alt=""></div>
+                <p><b>Un buen nombre de pizza</b></p>
+              </article>
+            </swiper-slide><swiper-slide>
+              <article class="custom-swiper__card">
+                <div><img src="pizza.png" alt=""></div>
+                <p><b>Un buen nombre de pizza</b></p>
+              </article>
+            </swiper-slide>
+
+
+          </swiper-container>
+
+          <button class="custom-swiper__arrow custom-swiper__arrow--next" type="button" aria-label="Diapositivas siguientes">
+            <span aria-hidden="true">&#10095;</span>
+          </button>
+        </div>
+
+        <nav class="custom-swiper__pagination" aria-label="Navegación de diapositivas"></nav>
+
+        <div class="pt">
+          <button class="btn">
+            <span>check our stars</span>
+          </button>
+        </div>
+
+      </section>
+    </main>
+
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+  <script>
+
+
+
+    const swiperEl = document.querySelector('.custom-swiper');
+    const section = swiperEl.closest('.section__popular');
+
+    const prevButton = section.querySelector(
+      '.custom-swiper__arrow--prev'
+    );
+
+    const nextButton = section.querySelector(
+      '.custom-swiper__arrow--next'
+    );
+
+    const pagination = section.querySelector(
+      '.custom-swiper__pagination'
+    );
+
+    const swiperParams = {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      speed: 500,
+      loop: true,
+      watchOverflow: true,
+      keyboard: {
+        enabled: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      },
+      on: {
+        init(swiper) {
+          // Un indicador por cada posición navegable.
+          pagination.replaceChildren();
+
+          const total = swiper.slides.length -
+            (swiper.loopedSlides ? swiper.loopedSlides * 2 : 0);
+
+          // Para loop, usamos las diapositivas originales del DOM.
+          const slideCount = swiperEl.querySelectorAll(
+            'swiper-slide:not(.swiper-slide-duplicate)'
+          ).length || total;
+
+          for (let i = 0; i < slideCount; i++) {
+            const dot = document.createElement('button');
+
+            dot.type = 'button';
+            dot.className = 'custom-swiper__dot';
+            dot.setAttribute(
+              'aria-label',
+              `Ir a la diapositiva ${i + 1}`
+            );
+
+            dot.addEventListener('click', () => {
+              swiper.slideToLoop(i);
+            });
+
+            pagination.append(dot);
+          }
+
+          updatePagination(swiper);
+        },
+
+        slideChange(swiper) {
+          updatePagination(swiper);
+        },
+      },
+    };
+
+    function updatePagination(swiper) {
+      const dots = pagination.querySelectorAll(
+        '.custom-swiper__dot'
+      );
+
+      dots.forEach((dot, index) => {
+        const active = index === swiper.realIndex;
+
+        dot.classList.toggle('is-active', active);
+
+        if (active) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    Object.assign(swiperEl, swiperParams);
+    swiperEl.initialize();
+
+    prevButton.addEventListener('click', () => {
+      swiperEl.swiper.slidePrev();
+    });
+
+    nextButton.addEventListener('click', () => {
+      swiperEl.swiper.slideNext();
+    });
+
+  </script>
+
+</body>
+
+</html>

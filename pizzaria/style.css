@@ -1,0 +1,194 @@
+/* iconos de https://icones.js.org/collection/pixelarticons */
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
+
+.pt {
+  padding-top: 2rem;
+}
+
+.btn {
+  --bg: #db360c;
+  --size-icon: 1.5rem;
+  background-color: var(--bg);
+  position: relative;
+  cursor: pointer;
+  display: grid;
+  grid-auto-flow: column;
+  gap: .3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  /* letter-spacing: -0.05em; */
+  color: white;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 1rem;
+  border-radius: .25rem;
+  align-items: center;
+
+  &:hover {
+    --bg: #eb3102;
+
+  }
+
+  &::after {
+    content: '';
+    background-image: url('./chevron.png');
+    width: var(--size-icon);
+    height: var(--size-icon);
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+/* slides */
+
+.section__popular {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.custom-swiper__layout {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-swiper {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.custom-swiper__card {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background: #f2f2f2;
+  /* background-color: pink; */
+  color: #222;
+}
+
+/* Flechas */
+.custom-swiper__arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+}
+
+.custom-swiper__arrow:hover {
+  background: #444;
+}
+
+.custom-swiper__arrow span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Contenedor de los indicadores */
+.custom-swiper__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+/*
+ * El botón mide 32 x 32 px.
+ * El círculo visible mide solo 8 x 8 px.
+ */
+.custom-swiper__dot {
+  display: grid;
+  place-items: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.custom-swiper__dot::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b8b8b8;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.custom-swiper__dot.is-active::before {
+  background: #222;
+  transform: scale(1.25);
+}
+
+/* Foco visible para navegación por teclado */
+.custom-swiper__arrow:focus-visible,
+.custom-swiper__dot:focus-visible {
+  outline: 3px solid #2675d8;
+  outline-offset: 2px;
+}
+
+/* Móvil */
+@media (max-width: 639px) {
+  .section__popular {
+    padding-inline: 8px;
+  }
+
+  .custom-swiper__layout {
+    grid-template-columns: 32px minmax(0, 1fr) 32px;
+    gap: 4px;
+  }
+
+  .custom-swiper__arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .slide-card {
+    min-height: 150px;
+  }
+
+  .custom-swiper__pagination {
+    gap: 0;
+    margin-top: 12px;
+  }
+}
+
+/* Respeta las preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+
+  .custom-swiper__dot::before,
+  .custom-swiper__arrow {
+    transition: none;
+  }
+}
