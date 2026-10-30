@@ -1,4 +1,15 @@
 /* iconos de https://icones.js.org/collection/pixelarticons */
+* {
+  /* outline: 1px solid plum; */
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  color-scheme: dark light;
+  --red: #db360c;
+}
+
 a {
   text-decoration: none;
 }
@@ -7,12 +18,24 @@ button {
   border: none;
 }
 
-.pt {
+.pt-1 {
+  padding-top: 1rem;
+}
+
+.pt-2 {
   padding-top: 2rem;
 }
 
+
+.inline-flex-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
 .btn {
-  --bg: #db360c;
+  --bg: var(--red);
+  --color: white;
   --size-icon: 1.5rem;
   background-color: var(--bg);
   position: relative;
@@ -23,8 +46,7 @@ button {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 500;
-  /* letter-spacing: -0.05em; */
-  color: white;
+  color: var(--color);
   width: fit-content;
   margin-inline: auto;
   padding: 1rem;
@@ -33,28 +55,179 @@ button {
 
   &:hover {
     --bg: #eb3102;
-
   }
 
   &::after {
     content: '';
-    background-image: url('./chevron.png');
+    background-image: url('../assets/icons/chevron.png');
     width: var(--size-icon);
     height: var(--size-icon);
-
     background-size: 100%;
     background-repeat: no-repeat;
   }
 }
 
-/* slides */
 
-.section__popular {
+.btn--alt {
+  --bg: rgb(228, 228, 228);
+  --color: red;
+
+  &::after {
+    background-image: url('../assets/icons/chevron-rojo.png');
+  }
+
+  &:hover {
+    --bg: white;
+  }
+}
+
+
+/* secciones-------------------------------- */
+
+#hero {
+  min-height: 80vh;
+  position: relative;
+  display: grid;
+  align-items: end;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background: url('../assets/imgs/hero.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.banner {
+  background-color: var(--red);
+  /* padding-block: 2rem; */
+  font-size: 2.2em;
+  font-weight: bolder;
+
+  & .marquee-container {
+    padding-block: 2rem;
+
+  }
+}
+
+
+
+.marquee-container {
+  overflow: hidden;
   width: 100%;
-  padding: 1rem;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  /* animation: marquee-scroll 22s linear infinite; */
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  padding: 0 12px;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on container hover */
+.marquee-container:hover .marquee {
+  animation-play-state: paused;
+}
+
+/* Or directly on the animated element */
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Optional visual feedback */
+.marquee-container:hover {
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.text-marquee {
+  display: flex;
+  gap: 48px;
+}
+
+.text-marquee-separator {
+  font-size: 4rem;
+  color: #6366f1;
+  opacity: 0.5;
+}
+
+
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  padding-bottom: 1em;
+  font-family: "Jersey 10", sans-serif;
+  letter-spacing: 0.06em;
+
+}
+
+.section--popular {
+  width: 100%;
+  padding: 4rem 2rem;
   box-sizing: border-box;
 }
 
+.section--reviews {
+  /* background-color: pink; */
+  width: 100%;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+
+  & h2 {
+    isolation: isolate;
+    background-color: rebeccapurple;
+    position: relative;
+  }
+
+  & h2::before {
+    content: '';
+    /* inset: 7rem 0 0 0; */
+    height: 50%;
+    bottom: 0;
+    left:0;
+    position: absolute;
+    background-color: pink;
+
+  }
+}
+
+
+
+
+
+
+
+
+/* slides ---------------------------------------*/
 .custom-swiper__layout {
   display: grid;
   grid-template-columns: 40px minmax(0, 1fr) 40px;
@@ -75,9 +248,9 @@ button {
   padding: 1.5rem;
   box-sizing: border-box;
   border-radius: 12px;
-  background: #f2f2f2;
+  background: var(--bg-card, inherit);
   /* background-color: pink; */
-  color: #222;
+  /* color: #222; */
 }
 
 /* Flechas */
@@ -141,20 +314,19 @@ button {
   height: 8px;
   border-radius: 50%;
   background: #b8b8b8;
-  transition:
-    background-color 180ms ease,
+  transition: background-color 180ms ease,
     transform 180ms ease;
 }
 
 .custom-swiper__dot.is-active::before {
-  background: #222;
+  background: var(--red);
   transform: scale(1.25);
 }
 
 /* Foco visible para navegación por teclado */
 .custom-swiper__arrow:focus-visible,
 .custom-swiper__dot:focus-visible {
-  outline: 3px solid #2675d8;
+  outline: 3px solid var(--red);
   outline-offset: 2px;
 }
 

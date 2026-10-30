@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIZZA RIA</title>
+
+  <!-- <meta name="theme-color" content="cornflowerblue" /> safari? -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+    body {
+      font-family: "Work Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .title,
+    .logo {
+      font-family: "Jersey 10", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .leading-tight {
+      line-height: .8;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-size: 2.2em;
+      letter-spacing: 0.06em;
+      display: block;
+      padding-inline: .2rem;
+
+      &+* {
+        font-size: 1.6em;
+      }
+    }
+
+    .w-fit {
+      width: fit-content;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="/">RIA</a>
+  </header>
+
+
+
+
+  <main>
+
+
+    <section id="hero">
+      <div class="hero__bg"></div>
+      <div class="p-2" style="isolation: isolate; display: grid; gap:.5rem; padding-inline: 2rem; padding-bottom: 5rem;">
+        <h1 class="leading-tight uppercase">
+          <span class="title">Great pizza,</span>
+          <span>even better memories</span>
+        </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, iusto.</p>
+
+        <div class="inline-flex-wrap w-fit pt-1">
+          <a href="" class="btn">check the menu</a>
+          <a href="" class="btn btn--alt">book a table</a>
+        </div>
+
+      </div>
+    </section>
+    <section class="banner uppercase">
+
+
+      <!-- Container with overflow hidden -->
+      <div class="marquee-container">
+        <!-- Piste animee -->
+        <div class="marquee">
+          <!-- Group 1: original content -->
+          <div class="marquee-track">
+            <div class="marquee-item">Open until 22:00</div>
+            <div class="marquee-item">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="marquee-item">Item 3</div>
+          </div>
+          <!-- Group 2: copy for the loop -->
+          <div class="marquee-track" aria-hidden="true">
+            <div class="marquee-item">Open until 22:00</div>
+            <div class="marquee-item">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+            <div class="marquee-item">Item 3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--popular" aria-label="Contenido popular">
+
+      <h2>from sjfhdkf dhfkdhfkd</h2>
+      <div class="custom-swiper__layout">
+        <button class="custom-swiper__arrow custom-swiper__arrow--prev" type="button" aria-label="Diapositivas anteriores">
+          <span aria-hidden="true">&#10094;</span>
+        </button>
+
+        <swiper-container class="custom-swiper" init="false" aria-label="Contenido popular">
+          <swiper-slide>
+            <article class="custom-swiper__card">
+              <div>
+                <img src="./assets/imgs/pizza.png" alt="">
+              </div>
+              <p><b>Un buen nombre de pizza</b></p>
+            </article>
+          </swiper-slide>
+          <swiper-slide>
+            <article class="custom-swiper__card">
+              <div><img src="./assets/imgs/pizza.png" alt=""></div>
+              <p><b>Un buen nombre de pizza</b></p>
+            </article>
+          </swiper-slide><swiper-slide>
+            <article class="custom-swiper__card">
+              <div><img src="./assets/imgs/pizza.png" alt=""></div>
+              <p><b>Un buen nombre de pizza</b></p>
+            </article>
+          </swiper-slide><swiper-slide>
+            <article class="custom-swiper__card">
+              <div><img src="./assets/imgs/pizza.png" alt=""></div>
+              <p><b>Un buen nombre de pizza</b></p>
+            </article>
+          </swiper-slide><swiper-slide>
+            <article class="custom-swiper__card">
+              <div><img src="./assets/imgs/pizza.png" alt=""></div>
+              <p><b>Un buen nombre de pizza</b></p>
+            </article>
+          </swiper-slide><swiper-slide>
+            <article class="custom-swiper__card">
+              <div><img src="./assets/imgs/pizza.png" alt=""></div>
+              <p><b>Un buen nombre de pizza</b></p>
+            </article>
+          </swiper-slide>
+
+
+        </swiper-container>
+
+        <button class="custom-swiper__arrow custom-swiper__arrow--next" type="button" aria-label="Diapositivas siguientes">
+          <span aria-hidden="true">&#10095;</span>
+        </button>
+      </div>
+
+      <nav class="custom-swiper__pagination" aria-label="Navegación de diapositivas"></nav>
+
+      <div class="pt-2">
+        <button class="btn">
+          <span>check our stars</span>
+        </button>
+      </div>
+
+    </section>
+
+
+
+    <section id="reviews" class="section--reviews">
+      <h2 class="uppercase">more than just pizza</h2>
+
+
+      <div class="custom-swiper__layout">
+        <button class="custom-swiper__arrow custom-swiper__arrow--prev" type="button" aria-label="Diapositivas anteriores">
+          <span aria-hidden="true">&#10094;</span>
+        </button>
+
+        <swiper-container class="custom-swiper" init="false" aria-label="Contenido popular">
+          <swiper-slide>
+            <article class="custom-swiper__card">
+              <div>
+                <blockquote>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsum, mollitia eveniet eaque recusandae possimus aut? Possimus, minima consectetur commodi fugit tenetur dolorem repellat perferendis neque sit a dicta nulla.
+                </blockquote>
+              </div>
+            </article>
+          </swiper-slide>
+          <swiper-slide>
+            <article class="custom-swiper__card">
+              <div>
+                <blockquote>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsum, mollitia eveniet eaque recusandae possimus aut? Possimus, minima consectetur commodi fugit tenetur dolorem repellat perferendis neque sit a dicta nulla.
+                </blockquote>
+              </div>
+            </article>
+          </swiper-slide> <swiper-slide>
+            <article class="custom-swiper__card">
+              <div>
+                <blockquote>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsum, mollitia eveniet eaque recusandae possimus aut? Possimus, minima consectetur commodi fugit tenetur dolorem repellat perferendis neque sit a dicta nulla.
+                </blockquote>
+              </div>
+            </article>
+          </swiper-slide> <swiper-slide>
+            <article class="custom-swiper__card">
+              <div>
+                <blockquote>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsum, mollitia eveniet eaque recusandae possimus aut? Possimus, minima consectetur commodi fugit tenetur dolorem repellat perferendis neque sit a dicta nulla.
+                </blockquote>
+              </div>
+            </article>
+          </swiper-slide>
+
+
+        </swiper-container>
+
+        <button class="custom-swiper__arrow custom-swiper__arrow--next" type="button" aria-label="Diapositivas siguientes">
+          <span aria-hidden="true">&#10095;</span>
+        </button>
+      </div>
+
+      <nav class="custom-swiper__pagination" aria-label="Navegación de diapositivas"></nav>
+
+      <div class="pt-2">
+        <button class="btn">
+          <span>check our stars</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+  <script>
+
+    document.querySelectorAll('.custom-swiper').forEach((swiperEl) => {
+
+      const section = swiperEl.closest('section');
+
+      const prevButton = section.querySelector(
+        '.custom-swiper__arrow--prev'
+      );
+
+      const nextButton = section.querySelector(
+        '.custom-swiper__arrow--next'
+      );
+
+      const pagination = section.querySelector(
+        '.custom-swiper__pagination'
+      );
+
+      const swiperParams = {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        speed: 500,
+        loop: true,
+        watchOverflow: true,
+
+        keyboard: {
+          enabled: true,
+        },
+
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+          },
+        },
+
+        on: {
+          init(swiper) {
+
+            pagination.replaceChildren();
+
+            const slideCount = swiperEl.querySelectorAll(
+              'swiper-slide'
+            ).length;
+
+            for (let i = 0; i < slideCount; i++) {
+
+              const dot = document.createElement('button');
+
+              dot.type = 'button';
+              dot.className = 'custom-swiper__dot';
+
+              dot.setAttribute(
+                'aria-label',
+                `Ir a la diapositiva ${i + 1}`
+              );
+
+              dot.addEventListener('click', () => {
+                swiper.slideToLoop(i);
+              });
+
+              pagination.append(dot);
+            }
+
+            updatePagination(swiper);
+          },
+
+          slideChange(swiper) {
+            updatePagination(swiper);
+          },
+        },
+      };
+
+      function updatePagination(swiper) {
+
+        const dots = pagination.querySelectorAll(
+          '.custom-swiper__dot'
+        );
+
+        dots.forEach((dot, index) => {
+
+          const active = index === swiper.realIndex;
+
+          dot.classList.toggle('is-active', active);
+
+          if (active) {
+            dot.setAttribute('aria-current', 'true');
+          } else {
+            dot.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      Object.assign(swiperEl, swiperParams);
+      swiperEl.initialize();
+
+      prevButton.addEventListener('click', () => {
+        swiperEl.swiper.slidePrev();
+      });
+
+      nextButton.addEventListener('click', () => {
+        swiperEl.swiper.slideNext();
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>
