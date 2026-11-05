@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <style>
+    body {
+      display: grid;
+      place-content: center;
+      min-height: 80vh;
+    }
+
+    table {
+      /* margin: auto; */
+    }
+
+    .daw {
+      background-color: rgb(94, 158, 255);
+    }
+  </style>
+  <table border="1" cellpadding="8" style="border-collapse: collapse; text-align: center; font-family: sans-serif;">
+    <thead>
+      <tr style="background-color: #0073e6; color: white;">
+        <th>Hora</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>09:00 - 09:50</b></td>
+        <td rowspan="2" style="background-color: plum;">cliente</td>
+        <td style="background-color: plum;">cliente</td>
+        <td rowspan="3" style="background-color: orange;">diw</td>
+        <td rowspan="2" style="background-color: plum;">cliente</td>
+        <td rowspan="3" style="background-color: greenyellow;">servicios (php)</td>
+      </tr>
+
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>09:50 - 10:40</b></td>
+        <td style="background-color: #ffe6cc;">ipei</td>
+      </tr>
+
+
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>10:40 - 11:30</b></td>
+        <td style="background-color: #f9f9f9; ">ingles</td>
+        <td style="background-color: #f9f9f9; ">ingles</td>
+        <td style="background-color: orange;">diw</td>
+        <!-- <td style="background-color: plum;">cli</td> -->
+      </tr>
+
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>11:30 -11:45</b></td>
+        <td colspan="5" style="background-color: #f9f9f9; color: #666; font-style: italic;">Recreo / Descanso</td>
+      </tr>
+
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>11:45 -12:00</b></td>
+        <td rowspan="2">digitalizacion</td>
+        <td colspan="3" style="background-color: #f9f9f9; color: #666; font-style: italic;">Recreo / Descanso</td>
+        <td rowspan="4" style="background-color: orange;">diw</td>
+      </tr>
+
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>12:00 - 12:35</b></td>
+
+        <td rowspan="2" class="daw">daw</td>
+        <td rowspan="5" style="background-color: greenyellow">servicios</td>
+        <td rowspan="4" class="daw">daw</td>
+      </tr>
+
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>12:35 - 12:50</b></td>
+        <!-- soft esta aqui porque digitalizacion ya ocupo su espacio en el anterior row -->
+        <td rowspan="2">soft</td>
+      </tr>
+
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>12:50 : 1:25</b></td>
+        <td rowspan="2" style="background-color: greenyellow;">servicios</td>
+      </tr>
+
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>1:25 - 1:40</b></td>
+        <td style="">recreo</td>
+        <td>recreo</td>
+      </tr>
+      <tr>
+        <td style="background-color: #f2f2f2;"><b>1:40 - 2:30</b></td>
+        <td class="daw">daw</td>
+        <td style="background-color: orange;">diw</td>
+        <td>ipei</td>
+        <td style="background-color: orange;">diw</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+</body>
+
+</html>
