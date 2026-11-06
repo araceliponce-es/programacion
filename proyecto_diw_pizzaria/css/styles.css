@@ -89,6 +89,7 @@ button {
   position: relative;
   display: grid;
   align-items: end;
+  color: white;
 }
 
 .p-2 {
@@ -116,6 +117,7 @@ button {
   /* padding-block: 2rem; */
   font-size: 2.2em;
   font-weight: bolder;
+  color: white;
 
   & .marquee-container {
     padding-block: 2rem;
@@ -182,10 +184,11 @@ button {
 
 h2 {
   text-align: center;
-  font-size: 2em;
+  font-size: 4em;
   padding-bottom: 1em;
   font-family: "Jersey 10", sans-serif;
   letter-spacing: 0.06em;
+  line-height: .8;
 
 }
 
@@ -196,27 +199,47 @@ h2 {
 }
 
 .section--reviews {
+  --bg: rgb(255, 191, 71);
   /* background-color: pink; */
   width: 100%;
   padding: 4rem 2rem;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 
   & h2 {
     isolation: isolate;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
     position: relative;
+    padding-block: 2rem;
   }
 
   & h2::before {
     content: '';
     /* inset: 7rem 0 0 0; */
     height: 50%;
-    bottom: 0;
-    left:0;
+    top: 50%;
+    bottom: -1rem;
+    inset-inline: -100vw;
     position: absolute;
-    background-color: pink;
+    background-color: var(--bg);
+    z-index: -1;
+    box-shadow: 0 80vh 0 80vh var(--bg);
 
+  }
+
+
+  .pseudo-bg {
+    /* position: absolute;
+    inset: 0;
+    background-color: pink; */
+
+    /* &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  } */
   }
 }
 
