@@ -11,17 +11,20 @@
 
   <div class="padre">
     <div class="rosa "></div>
-
     <div class="violeta violeta--1"></div>
     <div class="violeta violeta--2"></div>
-
   </div>
 
   <style>
+    body {
+      height: 100vh;
+      display: grid;
+      place-content: center;
+    }
+
     div>div {
       width: 250px;
       height: 250px;
-
     }
 
     .padre {
@@ -29,8 +32,6 @@
       width: 500px;
       height: 500px;
       background-color: pink;
-      display: grid;
-      place-content: center;
       outline: 5px solid blue;
     }
 
@@ -41,8 +42,6 @@
       right: 0;
     }
 
-
-
     .violeta--2 {
       top: 0;
       left: 0;
@@ -51,6 +50,8 @@
     .rosa {
       background-color: tomato;
       margin: auto;
+      position: absolute;
+      inset: 0;
     }
   </style>
 </body>
