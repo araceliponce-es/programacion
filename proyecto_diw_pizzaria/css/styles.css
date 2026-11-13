@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
 /* iconos de https://icones.js.org/collection/pixelarticons */
 * {
   /* outline: 1px solid plum; */
@@ -18,6 +22,92 @@ button {
   border: none;
 }
 
+.header--fixed {
+  /* background-color: rgba(255, 192, 203, 0.363); */
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  height: 4rem;
+  z-index: 1;
+
+
+  & nav,
+  ul {
+
+    height: inherit;
+  }
+
+  & ul {
+    display: flex;
+    align-items: center;
+    max-width: 70rem;
+    padding-inline: 2rem;
+    margin: auto;
+    /* height: inherit; */
+  }
+}
+
+main {
+  padding-top: 5rem;
+}
+
+main {
+  max-width: 70rem;
+  margin: auto;
+  background-color: palegoldenrod;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+
+
+body {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.title,
+.logo {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.leading-tight {
+  line-height: .8;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 2.2em;
+  letter-spacing: 0.06em;
+  display: block;
+  padding-inline: .2rem;
+
+  &+* {
+    font-size: 1.6em;
+  }
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+
+
 .pt-1 {
   padding-top: 1rem;
 }
@@ -26,12 +116,18 @@ button {
   padding-top: 2rem;
 }
 
+.ms-auto {
+  margin-inline-start: auto;
+}
+
 
 .inline-flex-wrap {
   display: inline-flex;
   flex-wrap: wrap;
   gap: .5rem;
 }
+
+
 
 .btn {
   --bg: var(--red);

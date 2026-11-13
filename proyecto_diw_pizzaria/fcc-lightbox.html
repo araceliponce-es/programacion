@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lightbox Viewer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <div class="gallery">
+    <img src="https://cdn.freecodecamp.org/curriculum/labs/stonehenge-thumbnail.jpg" alt="" class="gallery-item">
+    <img src="https://cdn.freecodecamp.org/curriculum/labs/storm-thumbnail.jpg" alt="" class="gallery-item">
+    <img src="https://cdn.freecodecamp.org/curriculum/labs/trees-thumbnail.jpg" alt="" class="gallery-item">
+  </div>
+
+  <div class="lightbox" style="">
+    <button id="close-btn">&times;</button>
+    <img id="lightbox-image" src="" alt="">
+  </div>
+
+  <script>
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        document.querySelector('.lightbox').style.display = 'flex';
+        console.log(item.attributes)
+        // document.querySelector('#lightbox-image').setAttribute.src(item.getAttribute(src).replace('thumbnail', ''));
+        document.querySelector('#lightbox-image').src = item.src.replace('thumbnail-', '');
+
+      })
+    })
+    document.addEventListener('click', (e) => {
+      if (e.target.className == 'lightbox' || e.target.id == 'close-btn') {
+        document.querySelector('.lightbox').style.display = 'none';
+      }
+      console.log(e.target)
+    })
+  </script>
+</body>
+
+</html>

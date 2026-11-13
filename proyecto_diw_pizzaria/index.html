@@ -5,64 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PIZZA RIA</title>
-
-  <!-- <meta name="theme-color" content="cornflowerblue" /> safari? -->
-
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-
-    body {
-      font-family: "Work Sans", sans-serif;
-      font-optical-sizing: auto;
-      font-style: normal;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .title,
-    .logo {
-      font-family: "Jersey 10", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    .leading-tight {
-      line-height: .8;
-    }
-
-    .uppercase {
-      text-transform: uppercase;
-    }
-
-    .title {
-      font-size: 2.2em;
-      letter-spacing: 0.06em;
-      display: block;
-      padding-inline: .2rem;
-
-      &+* {
-        font-size: 1.6em;
-      }
-    }
-
-    .w-fit {
-      width: fit-content;
-    }
-  </style>
-
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
 
-  <header>
-    <a class="logo" href="/">RIA</a>
+  <header class="header--fixed">
+    <nav>
+      <ul>
+        <li><a class="logo" href="/">RIA</a></li>
+        <li class="ms-auto"><a href="menu.html">menu</a></li>
+        <li><a href="reserva.html">reserva</a></li>
+      </ul>
+    </nav>
   </header>
 
 
@@ -81,7 +37,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, iusto.</p>
 
         <div class="inline-flex-wrap w-fit pt-1">
-          <a href="" class="btn">check the menu</a>
+          <a href="/menu.html" class="btn">check the menu</a>
           <a href="" class="btn btn--alt">book a table</a>
         </div>
 

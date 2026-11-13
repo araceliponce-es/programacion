@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIZZA RIA</title>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script> -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/styles_menu.css">
+
+</head>
+
+<body>
+
+  <header class="header--fixed">
+    <nav>
+      <ul>
+        <li><a class="logo" href="/">RIA</a></li>
+        <li class="ms-auto"><a href="menu.html">menu</a></li>
+        <li><a href="reserva.html">reserva</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+
+
+
+  <main>
+
+
+    <details>
+      <summary class="details__summary">
+        <div class="filter-info">
+          <h3>Are you okay with anything?</h3>
+          <small>show filters</small>
+        </div>
+      </summary>
+      <div class="details__content">
+        <div class="filters">
+          <small>Tap what you cannot eat</small>
+
+          <div id="alergenos-filters" class="filter-row"></div>
+          <div id="ingredientes-filters" class="filter-row"></div>
+        </div>
+      </div>
+    </details>
+
+
+
+    <!-- <section class="menu-filters">
+      <div class="filter-info">
+        <h3>Are you okay with anything?</h3>
+        <small>show filters</small>
+      </div>
+
+      <div class="filters">
+        <small>Tap what you cannot eat</small>
+
+        <div id="alergenos-filters" class="filter-row"></div>
+        <div id="ingredientes-filters" class="filter-row"></div>
+      </div>
+    </section> -->
+
+    <section class="menu-section">
+      <h2>PIZZAS</h2>
+      <div id="menu-pizzas" class="menu-grid"></div>
+    </section>
+
+    <section class="menu-section">
+      <h2>POSTRES</h2>
+      <div id="menu-postres" class="menu-grid"></div>
+    </section>
+
+  </main>
+
+
+  <script type="module">
+
+
+
+    const ALERGENOS = [
+      { id: 1, nombre: "Gluten" },
+      { id: 2, nombre: "Crustáceos" },
+      { id: 3, nombre: "Huevos" },
+      { id: 4, nombre: "Pescado" },
+      { id: 5, nombre: "Cacahuetes" },
+      { id: 6, nombre: "Soja" },
+      { id: 7, nombre: "Lácteos" },
+      { id: 8, nombre: "Frutos de cáscara" },
+      { id: 9, nombre: "Apio" },
+      { id: 10, nombre: "Mostaza" },
+      { id: 11, nombre: "Sésamo" },
+      { id: 12, nombre: "Sulfitos" },
+      { id: 13, nombre: "Altramuces" },
+      { id: 14, nombre: "Moluscos" }
+    ];
+
+    const INGREDIENTES = [
+      { id: 1, nombre: "Tomate" },
+      { id: 2, nombre: "Mozzarella" },
+      { id: 3, nombre: "Jamón cocido" },
+      { id: 4, nombre: "Champiñones" },
+      { id: 5, nombre: "Gambas" },
+      { id: 6, nombre: "Aceitunas" },
+      { id: 7, nombre: "Albahaca" },
+      { id: 8, nombre: "Pepperoni" },
+      { id: 9, nombre: "Queso parmesano" },
+      { id: 10, nombre: "Queso gorgonzola" },
+      { id: 11, nombre: "Bacon" },
+      { id: 12, nombre: "Cebolla" },
+      { id: 13, nombre: "Pimiento" },
+      { id: 14, nombre: "Atún" },
+      { id: 15, nombre: "Harina de trigo" },
+      { id: 16, nombre: "Azúcar" },
+      { id: 17, nombre: "Huevo" },
+      { id: 18, nombre: "Leche" },
+      { id: 19, nombre: "Nata" },
+      { id: 20, nombre: "Chocolate" },
+      { id: 21, nombre: "Mascarpone" },
+      { id: 22, nombre: "Café" },
+      { id: 23, nombre: "Galleta" },
+      { id: 24, nombre: "Almendras" },
+      { id: 25, nombre: "Fresas" },
+      { id: 26, nombre: "Limón" },
+      { id: 27, nombre: "Mantequilla" },
+      { id: 28, nombre: "Cacao" },
+      { id: 29, nombre: "Vainilla" }
+    ];
+
+    document.addEventListener("DOMContentLoaded", async () => {
+
+      // ==========================================
+      // 1. CARGAR JSON
+      // ==========================================
+
+      const response = await fetch("./menu.json");
+
+      if (!response.ok) {
+        throw new Error(`Error cargando menú: ${response.status}`);
+      }
+
+      const menu = await response.json();
+
+
+      // ==========================================
+      // 2. CONTENEDORES
+      // ==========================================
+
+      const contenedorAlergenos = document.getElementById("alergenos-filters");
+      const contenedorIngredientes = document.getElementById("ingredientes-filters");
+
+      const contenedorPizzas = document.getElementById("menu-pizzas");
+      const contenedorPostres = document.getElementById("menu-postres");
+
+
+      // ==========================================
+      // 3. ESTADO
+      // ==========================================
+
+      const alergenosSeleccionados = new Set();
+      const ingredientesSeleccionados = new Set();
+
+      const tarjetas = [];
+
+
+      function contarProductosAfectados(valor, arreglo) {
+        return tarjetas.filter(({ producto }) =>
+          (producto[arreglo] ?? []).includes(valor)
+        ).length;
+      }
+
+      // ==========================================
+      // 4. CREAR FILTROS
+      // ==========================================
+
+      function renderFiltros(elementos, contenedor, seleccionados) {
+
+        elementos.forEach(elemento => {
+
+          const btn = document.createElement("button");
+
+          // const cantidad = contarProductosAfectados(menu.pizzas.ingredientes, elemento.id);
+          // console.log({ elemento })
+          // console.log({ cantidad })
+
+          btn.type = "button";
+          btn.classList.add("filter-chip");
+          btn.textContent = elemento.nombre;
+          // btn.textContent = `${elemento.nombre} (${cantidad})`;
+
+          btn.setAttribute("aria-pressed", "false");
+
+          btn.addEventListener("click", () => {
+
+            if (seleccionados.has(elemento.id)) {
+
+              seleccionados.delete(elemento.id);
+              btn.classList.remove("active");
+              btn.setAttribute("aria-pressed", "false");
+
+            } else {
+
+              seleccionados.add(elemento.id);
+              btn.classList.add("active");
+              btn.setAttribute("aria-pressed", "true");
+
+            }
+
+            filtrarMenu();
+          });
+
+          contenedor.appendChild(btn);
+        });
+      }
+
+
+      // ==========================================
+      // 5. CREAR TARJETA
+      // ==========================================
+
+      function crearTarjeta(producto) {
+
+        const li = document.createElement("li");
+        li.classList.add("container");
+
+        const card = document.createElement("article");
+        card.classList.add("menu-card");
+
+        const imagen = document.createElement("img");
+        imagen.src = producto.imagen;
+        imagen.alt = producto.nombre;
+        imagen.loading = "lazy";
+
+        const informacion = document.createElement("div");
+        informacion.classList.add("menu-card-info");
+
+        const nombre = document.createElement("h3");
+        nombre.textContent = producto.nombre;
+
+        const descripcion = document.createElement("p");
+        descripcion.textContent = producto.descripcion;
+
+
+        const precio = document.createElement("span");
+        precio.classList.add("menu-card-price");
+        precio.textContent =
+          `${producto.precio.toFixed(2).replace(".", ",")} €`;
+
+        informacion.append(nombre, descripcion, precio);
+        card.append(imagen, informacion);
+        li.append(card);
+
+        return li;
+      }
+
+
+      // ==========================================
+      // 6. RENDERIZAR PRODUCTOS
+      // ==========================================
+
+      function renderProductos(productos, contenedor, categoria) {
+
+        productos.forEach(producto => {
+
+          const card = crearTarjeta(producto);
+
+          card.dataset.id = producto.id;
+          card.dataset.category = categoria;
+
+          contenedor.appendChild(card);
+
+          tarjetas.push({
+            elemento: card,
+            producto: producto
+          });
+
+        });
+      }
+
+
+      // ==========================================
+      // 7. COMPROBAR FILTROS
+      // ==========================================
+
+      function filtrarProducto(producto) {
+
+        const contieneAlergeno = (producto.alergenos ?? []).some(
+          id => alergenosSeleccionados.has(id)
+        );
+
+        const contieneIngrediente = (producto.ingredientes ?? []).some(
+          id => ingredientesSeleccionados.has(id)
+        );
+
+        return !contieneAlergeno && !contieneIngrediente;
+      }
+
+
+      // ==========================================
+      // 8. FILTRAR MENÚ
+      // ==========================================
+
+      function filtrarMenu() {
+
+        tarjetas.forEach(({ elemento, producto }) => {
+
+          elemento.hidden = !filtrarProducto(producto);
+
+        });
+
+      }
+
+
+      // ==========================================
+      // 9. INICIALIZAR
+      // ==========================================
+
+      renderFiltros(
+        ALERGENOS,
+        contenedorAlergenos,
+        alergenosSeleccionados
+      );
+
+      renderFiltros(
+        INGREDIENTES,
+        contenedorIngredientes,
+        ingredientesSeleccionados
+      );
+
+      renderProductos(menu.pizzas, contenedorPizzas, "pizzas");
+
+      renderProductos(menu.postres, contenedorPostres, "postres");
+
+      filtrarMenu();
+
+    });
+
+  </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+{
+  "pizzas": [
+    {
+      "id": 1,
+      "nombre": "Margarita",
+      "precio": 9.5,
+      "descripcion": "Tomate, mozzarella fresca y albahaca.",
+      "imagen": "/assets/imgs/pizza.png",
+      "ingredientes": [1, 2, 7, 15],
+      "alergenos": [1, 7],
+      "disponible": true
+    },
+    {
+      "id": 2,
+      "nombre": "Cuatro Quesos",
+      "precio": 12.5,
+      "descripcion": "Mozzarella, parmesano, gorgonzola y queso fundido.",
+      "imagen": "/assets/imgs/pizza-2.png",
+      "ingredientes": [1, 2, 9, 10, 15],
+      "alergenos": [1, 7],
+      "disponible": true
+    },
+    {
+      "id": 3,
+      "nombre": "Pepperoni",
+      "precio": 11.5,
+      "descripcion": "Tomate, mozzarella y pepperoni ligeramente picante.",
+      "imagen": "/assets/imgs/pizza.png",
+      "ingredientes": [1, 2, 8, 15],
+      "alergenos": [1, 7],
+      "disponible": true
+    },
+    {
+      "id": 4,
+      "nombre": "Marinera",
+      "precio": 14.5,
+      "descripcion": "Tomate, mozzarella, gambas, atún y aceitunas.",
+      "imagen": "/assets/imgs/pizza-2.png",
+      "ingredientes": [1, 2, 5, 6, 14, 15],
+      "alergenos": [1, 2, 4, 7],
+      "disponible": true
+    },
+    {
+      "id": 5,
+      "nombre": "Barbacoa",
+      "precio": 12.0,
+      "descripcion": "Tomate, mozzarella, bacon, jamón y salsa barbacoa.",
+      "imagen": "/assets/imgs/pizza.png",
+      "ingredientes": [1, 2, 3, 11, 15],
+      "alergenos": [1, 6, 7, 10],
+      "disponible": true
+    },
+    {
+      "id": 6,
+      "nombre": "Vegetal",
+      "precio": 10.5,
+      "descripcion": "Tomate, mozzarella, champiñones, cebolla y pimiento.",
+      "imagen": "/assets/imgs/pizza-2.png",
+      "ingredientes": [1, 2, 4, 12, 13, 15],
+      "alergenos": [1, 7],
+      "disponible": true
+    }
+  ],
+  "postres": [
+    {
+      "id": 1,
+      "nombre": "Tiramisú",
+      "precio": 4.5,
+      "descripcion": "Postre italiano de mascarpone, café, cacao y bizcocho.",
+      "imagen": "/assets/imgs/pizza.png",
+      "ingredientes": [16, 17, 18, 21, 22, 23, 28],
+      "alergenos": [1, 3, 7],
+      "disponible": true
+    },
+    {
+      "id": 2,
+      "nombre": "Tarta de queso",
+      "precio": 4.0,
+      "descripcion": "Tarta cremosa de queso con base crujiente de galleta.",
+      "imagen": "/assets/imgs/pizza.png",
+      "ingredientes": [16, 17, 18, 23, 27],
+      "alergenos": [1, 3, 7],
+      "disponible": true
+    },
+    {
+      "id": 3,
+      "nombre": "Brownie de chocolate",
+      "precio": 4.5,
+      "descripcion": "Brownie casero de chocolate con nueces y textura jugosa.",
+      "imagen": "/assets/imgs/pizza.png",
+      "ingredientes": [16, 17, 18, 20, 24, 27, 28],
+      "alergenos": [1, 3, 7, 8],
+      "disponible": true
+    },
+    {
+      "id": 4,
+      "nombre": "Helado de vainilla",
+      "precio": 3.5,
+      "descripcion": "Dos bolas de helado artesanal con sabor a vainilla.",
+      "imagen": "/assets/imgs/pizza.png",
+      "ingredientes": [16, 17, 18, 19, 29],
+      "alergenos": [3, 7],
+      "disponible": true
+    },
+    {
+      "id": 5,
+      "nombre": "Tarta de fresas",
+      "precio": 4.8,
+      "descripcion": "Bizcocho suave con crema pastelera y fresas frescas.",
+      "imagen": "/assets/imgs/pizza.png",
+      "ingredientes": [16, 17, 18, 19, 25, 27],
+      "alergenos": [1, 3, 7],
+      "disponible": true
+    },
+    {
+      "id": 6,
+      "nombre": "Lemon pie",
+      "precio": 4.5,
+      "descripcion": "Tarta de limón con crema cítrica y merengue tostado.",
+      "imagen": "/assets/imgs/pizza.png",
+      "ingredientes": [16, 17, 18, 26, 27],
+      "alergenos": [1, 3, 7],
+      "disponible": true
+    }
+  ]
+}
